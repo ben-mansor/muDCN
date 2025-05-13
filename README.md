@@ -13,7 +13,7 @@
 
 ## Architecture
 
-![μDCN Architecture](docs/architecture.png)
+![μDCN Architecture](docs/architecture.md)
 
 The μDCN architecture consists of the following components:
 

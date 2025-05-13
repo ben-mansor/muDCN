@@ -1,0 +1,154 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: udcn-control-plane
+  labels:
+    app: udcn
+    component: control-plane
+spec:
+  replicas: 1  # Only one instance per node is needed
+  selector:
+    matchLabels:
+      app: udcn
+      component: control-plane
+  template:
+    metadata:
+      labels:
+        app: udcn
+        component: control-plane
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8000"
+        prometheus.io/path: "/metrics"
+    spec:
+      containers:
+      - name: udcn-control-plane
+        image: udcn/control-plane:latest
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: UDCN_CONFIG
+          value: "/app/config/config.yaml"
+        - name: PYTHONUNBUFFERED
+          value: "1"
+        ports:
+        - name: metrics
+          containerPort: 8000
+          protocol: TCP
+        resources:
+          limits:
+            cpu: "1"
+            memory: "2Gi"
+          requests:
+            cpu: "500m"
+            memory: "1Gi"
+        livenessProbe:
+          httpGet:
+            path: /metrics
+            port: metrics
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /metrics
+            port: metrics
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        securityContext:
+          runAsUser: 1000
+          runAsGroup: 1000
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+        volumeMounts:
+        - name: config
+          mountPath: /app/config
+          readOnly: true
+        - name: models
+          mountPath: /app/models
+      volumes:
+      - name: config
+        configMap:
+          name: udcn-control-plane-config
+      - name: models
+        persistentVolumeClaim:
+          claimName: udcn-models-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: udcn-control-plane
+  labels:
+    app: udcn
+    component: control-plane
+spec:
+  selector:
+    app: udcn
+    component: control-plane
+  ports:
+  - name: metrics
+    port: 8000
+    protocol: TCP
+    targetPort: metrics
+  type: ClusterIP
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: udcn-control-plane-config
+  labels:
+    app: udcn
+    component: control-plane
+data:
+  config.yaml: |
+    # μDCN Control Plane Configuration
+    
+    # Transport layer address
+    transport_address: "udcn-transport:50051"
+    
+    # ML model configuration
+    ml_model: "mtu_predictor.tflite"
+    ml_features:
+      - "packet_loss"
+      - "latency"
+      - "throughput"
+      - "jitter"
+      - "buffer_pressure"
+      - "congestion"
+    
+    # Default values
+    default_mtu: 1400
+    
+    # Network monitoring
+    interfaces:
+      - "eth0"
+    monitoring_interval: 5
+    
+    # Adaptation settings
+    adaptation_interval: 30
+    min_confidence: 0.7
+    
+    # Metrics
+    expose_metrics: true
+    metrics_port: 8000
+    
+    # Federated learning
+    federated_learning:
+      enabled: true
+      aggregation_interval: 3600
+      min_nodes: 3
+      max_nodes: 10
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: udcn-models-pvc
+  labels:
+    app: udcn
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: standard

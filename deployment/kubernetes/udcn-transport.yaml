@@ -1,0 +1,129 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: udcn-transport
+  labels:
+    app: udcn
+    component: transport
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: udcn
+      component: transport
+  template:
+    metadata:
+      labels:
+        app: udcn
+        component: transport
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9090"
+        prometheus.io/path: "/metrics"
+    spec:
+      containers:
+      - name: udcn-transport
+        image: udcn/transport:latest
+        imagePullPolicy: IfNotPresent
+        args:
+          - "--address"
+          - "0.0.0.0:6363"
+          - "--cache-size"
+          - "50000"
+          - "--mtu"
+          - "1400"
+          - "--metrics-port"
+          - "9090"
+        ports:
+        - name: ndn-udp
+          containerPort: 6363
+          protocol: UDP
+        - name: ndn-tcp
+          containerPort: 6363
+          protocol: TCP
+        - name: metrics
+          containerPort: 9090
+          protocol: TCP
+        resources:
+          limits:
+            cpu: "1"
+            memory: "1Gi"
+          requests:
+            cpu: "500m"
+            memory: "512Mi"
+        livenessProbe:
+          httpGet:
+            path: /metrics
+            port: metrics
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /metrics
+            port: metrics
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        securityContext:
+          runAsUser: 1000
+          runAsGroup: 1000
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+        volumeMounts:
+        - name: config
+          mountPath: /app/config
+          readOnly: true
+      volumes:
+      - name: config
+        configMap:
+          name: udcn-transport-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: udcn-transport
+  labels:
+    app: udcn
+    component: transport
+spec:
+  selector:
+    app: udcn
+    component: transport
+  ports:
+  - name: ndn-udp
+    port: 6363
+    protocol: UDP
+    targetPort: ndn-udp
+  - name: ndn-tcp
+    port: 6363
+    protocol: TCP
+    targetPort: ndn-tcp
+  - name: metrics
+    port: 9090
+    protocol: TCP
+    targetPort: metrics
+  type: ClusterIP
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: udcn-transport-config
+  labels:
+    app: udcn
+    component: transport
+data:
+  transport.conf: |
+    # μDCN Transport Configuration
+    
+    # Network settings
+    bind_address = "0.0.0.0:6363"
+    
+    # Content store settings
+    cache_capacity = 50000
+    
+    # Security settings
+    encryption_enabled = true
+    
+    # Advanced settings
+    log_level = "info"

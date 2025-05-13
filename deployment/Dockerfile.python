@@ -1,0 +1,46 @@
+# μDCN Python Control Plane Dockerfile
+FROM python:3.9-slim-bullseye
+
+# Install dependencies
+RUN apt-get update && \
+    apt-get install -y \
+        build-essential \
+        gcc \
+        pkg-config \
+        git \
+        && rm -rf /var/lib/apt/lists/*
+
+# Create a non-root user
+RUN useradd -m udcn
+
+# Create app directory
+WORKDIR /app
+
+# Copy requirements first for better caching
+COPY python_control_plane/requirements.txt .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the application code
+COPY python_control_plane /app/
+
+# Create directories for models and data
+RUN mkdir -p /app/models /app/data && \
+    chown -R udcn:udcn /app
+
+# Switch to non-root user
+USER udcn
+
+# Expose metrics port
+EXPOSE 8000
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+ENV UDCN_CONFIG=/app/config.yaml
+
+# Set entrypoint
+ENTRYPOINT ["python"]
+
+# Default command
+CMD ["-m", "udcn_control.controller"]

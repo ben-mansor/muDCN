@@ -1,0 +1,74 @@
+# μDCN Rust Transport Layer Dockerfile
+FROM rust:1.65-slim-bullseye as builder
+
+# Install dependencies
+RUN apt-get update && \
+    apt-get install -y \
+        pkg-config \
+        libssl-dev \
+        build-essential \
+        git \
+        && rm -rf /var/lib/apt/lists/*
+
+# Create a new user
+RUN useradd -m udcn
+
+# Create app directory
+WORKDIR /app
+
+# Copy Cargo.toml and Cargo.lock
+COPY rust_ndn_transport/Cargo.toml rust_ndn_transport/Cargo.lock* ./
+
+# Create dummy source
+RUN mkdir -p src/bin && \
+    echo "fn main() {}" > src/bin/node.rs && \
+    echo "pub fn main() {}" > src/lib.rs
+
+# Build dependencies
+RUN cargo build --release
+
+# Remove dummy source
+RUN rm -rf src
+
+# Copy actual source code
+COPY rust_ndn_transport/src ./src
+
+# Build the application
+RUN cargo build --release
+
+# Runtime image
+FROM debian:bullseye-slim
+
+# Install OpenSSL and tcpdump for debugging
+RUN apt-get update && \
+    apt-get install -y \
+        libssl1.1 \
+        ca-certificates \
+        tcpdump \
+        iproute2 \
+        iputils-ping \
+        && rm -rf /var/lib/apt/lists/*
+
+# Create a non-root user
+RUN useradd -m udcn
+
+# Create app directory
+WORKDIR /app
+
+# Copy the built binary from the builder stage
+COPY --from=builder /app/target/release/udcn-node .
+
+# Set file ownership
+RUN chown -R udcn:udcn /app
+
+# Switch to non-root user
+USER udcn
+
+# Expose ports
+EXPOSE 6363/udp 6363/tcp 9090/tcp
+
+# Set entrypoint
+ENTRYPOINT ["/app/udcn-node"]
+
+# Default command
+CMD ["--address", "0.0.0.0:6363", "--metrics-port", "9090"]

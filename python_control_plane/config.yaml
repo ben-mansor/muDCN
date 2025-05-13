@@ -1,0 +1,52 @@
+# μDCN Control Plane Configuration
+
+# Transport layer gRPC address
+transport_address: "localhost:50051"
+
+# ML model configuration
+ml_model: "mtu_predictor.tflite"
+ml_features:
+  - "packet_loss"     # Percentage of packet loss (0-100)
+  - "latency"         # Network latency in milliseconds
+  - "throughput"      # Network throughput in Mbps
+  - "jitter"          # Network jitter in milliseconds
+  - "buffer_pressure" # Buffer pressure (0-1)
+  - "congestion"      # Congestion level (0-1)
+
+# Default values
+default_mtu: 1400
+
+# Network monitoring
+interfaces:
+  - "eth0"
+  - "eth1"
+monitoring_interval: 5  # Seconds between monitoring samples
+
+# Adaptation settings
+adaptation_interval: 30  # Seconds between adaptation decisions
+min_confidence: 0.7     # Minimum confidence to apply adaptation
+
+# Metrics
+expose_metrics: true
+metrics_port: 8000
+
+# Federated learning
+federated_learning:
+  enabled: true
+  aggregation_interval: 3600  # Seconds between model aggregation (1 hour)
+  min_nodes: 3                # Minimum nodes to participate in aggregation
+  max_nodes: 10               # Maximum nodes to participate in aggregation
+  
+# Security
+security:
+  encryption_enabled: true
+  signature_verification: true
+  trust_store: "trust_store.pem"
+  
+# Advanced settings
+advanced:
+  threadpool_size: 4
+  max_pending_interests: 1000
+  max_retries: 3
+  timeout: 5000   # Milliseconds
+  log_level: "info"

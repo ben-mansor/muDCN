@@ -1,0 +1,60 @@
+[package]
+name = "udcn-transport"
+version = "0.1.0"
+edition = "2021"
+authors = ["μDCN Team"]
+description = "High-performance Rust NDN transport layer with QUIC integration for μDCN"
+license = "MIT"
+
+[dependencies]
+# QUIC implementation - Quinn is a pure-Rust QUIC implementation
+quinn = "0.10.1"
+tokio = { version = "1.29.1", features = ["full"] }
+bytes = "1.4.0"
+structopt = "0.3.26"
+dashmap = "5.4.0"  # Thread-safe concurrent HashMap
+lru = "0.11.1"     # LRU cache implementation
+sha2 = "0.10.7"    # Hashing for NDN names
+ring = "0.16.20"   # Cryptographic operations
+prometheus = "0.13.3"  # Prometheus metrics
+warp = "0.3.5"     # Web server for metrics endpoint
+tonic = "0.9.2"    # gRPC framework
+prost = "0.11.9"   # Protocol buffers implementation
+tokio-stream = { version = "0.1.14", features = ["sync", "net"] }  # Streaming support
+tracing = "0.1.37"
+tracing-subscriber = "0.3.17"
+futures = "0.3.28"
+serde = { version = "1.0.171", features = ["derive"] }
+serde_json = "1.0.103"
+anyhow = "1.0.72"
+thiserror = "1.0.44"
+rand = "0.8.5"
+log = "0.4.19"
+env_logger = "0.10.0"
+socket2 = "0.4.9"
+libc = "0.2.147"
+hickory-resolver = "0.24.0"  # DNS resolution
+parking_lot = "0.12.1"  # Efficient synchronization primitives
+hex = "0.4.3"      # Hex encoding/decoding
+
+[dev-dependencies]
+criterion = "0.5.1"
+
+[build-dependencies]
+prost-build = "0.11.9"
+tonic-build = "0.9.2"
+
+[[bin]]
+name = "udcn-node"
+path = "src/bin/node.rs"
+
+[lib]
+name = "udcn_transport"
+path = "src/lib.rs"
+
+# Optimize for speed in release mode
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+panic = "abort"

@@ -1,0 +1,72 @@
+# μDCN Testbed Traffic Configuration
+
+# TRex configuration
+trex_dir: "/opt/trex"
+server_args:
+  - "--no-watchdog"
+  - "--no-hw-flow-stat"
+
+# Traffic settings
+duration: 60                # Test duration in seconds
+rate: "10gbps"              # Traffic rate (can be in pps, gbps, etc.)
+packet_size: 1400           # NDN packet size in bytes
+interfaces: ["0", "1"]      # TRex interface indexes
+ndn_prefix: "/udcn/test"    # NDN prefix to use in Interest packets
+
+# Network conditions
+latency_ms: 0               # Additional latency in milliseconds
+packet_loss: 0.0            # Packet loss percentage (0-100)
+
+# Test scenarios
+scenarios:
+  - name: "baseline"
+    description: "Baseline performance test"
+    rate: "10gbps"
+    packet_size: 1400
+    latency_ms: 0
+    packet_loss: 0.0
+
+  - name: "high_latency"
+    description: "High latency test"
+    rate: "5gbps"
+    packet_size: 1400
+    latency_ms: 100
+    packet_loss: 0.0
+
+  - name: "packet_loss"
+    description: "Packet loss test"
+    rate: "5gbps"
+    packet_size: 1400
+    latency_ms: 0
+    packet_loss: 5.0
+
+  - name: "heavy_load"
+    description: "Heavy load test"
+    rate: "50gbps"
+    packet_size: 1400
+    latency_ms: 0
+    packet_loss: 0.0
+
+  - name: "mixed_conditions"
+    description: "Mixed conditions test"
+    rate: "25gbps"
+    packet_size: 1400
+    latency_ms: 50
+    packet_loss: 2.0
+
+  - name: "mtu_variation"
+    description: "MTU variation test"
+    rate: "5gbps"
+    packet_size: 4000       # Larger than default MTU
+    latency_ms: 0
+    packet_loss: 0.0
+
+# DDoS attack settings
+ddos:
+  attack_type: "interest_flood"  # Type of attack
+  attack_rate: "50gbps"          # Attack traffic rate
+  attack_duration: 30            # Attack duration in seconds
+  target_prefix: "/udcn/test"    # Target NDN prefix
+
+# Output settings
+output_file: "results/traffic_test.json"

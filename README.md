@@ -47,7 +47,7 @@ The μDCN architecture consists of the following components:
 
 1. Clone the repository
 ```bash
-git clone https://github.com/username/udcn.git
+git clone https://github.com/ben-mansor/muDCN.git
 cd udcn
 ```
 

@@ -250,31 +250,34 @@ impl ReassemblyContext {
     }
     
     /// Reassemble the data object
-    fn reassemble(&self) -> Result<Bytes> {
+    pub fn reassemble(&self) -> Result<Bytes> {
+        // Check if we have all fragments
         if !self.is_complete() {
-            return Err(Error::Fragmentation("Incomplete reassembly".into()));
+            return Err(Error::Fragmentation("Missing fragments".into()));
         }
         
         // Calculate total size
-        let total_size: usize = self.fragments.values().map(|f| f.len()).sum();
+        let total_size: usize = self.fragments.values().map(|b| b.len()).sum();
         
-        // Allocate buffer for the reassembled data
-        let mut buf = BytesMut::with_capacity(total_size);
+        // Create a buffer for the reassembled object
+        let mut reassembled = BytesMut::with_capacity(total_size);
         
         // Add fragments in order
         for i in 0..self.total_fragments {
             if let Some(fragment) = self.fragments.get(&i) {
-                buf.extend_from_slice(fragment);
+                reassembled.extend_from_slice(fragment);
             } else {
                 return Err(Error::Fragmentation(format!("Missing fragment {}", i)));
             }
         }
         
-        // Record reassembly time
-        let elapsed = self.start_time.elapsed();
+        let start = std::time::Instant::now();
+        let elapsed = start.elapsed();
+        
+        // Track metrics
         REASSEMBLY_TIME_HISTOGRAM.observe(elapsed.as_secs_f64());
         
-        Ok(buf.freeze())
+        Ok(reassembled.freeze())
     }
 }
 

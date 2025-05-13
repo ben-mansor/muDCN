@@ -10,6 +10,8 @@ use std::sync::Arc;
 use std::time::{Duration, SystemTime};
 
 use ring::{digest, rand, signature};
+use ring::rand::SecureRandom;
+use ring::signature::KeyPair;
 use rustls::{Certificate, PrivateKey};
 use sha2::{Sha256, Digest};
 
@@ -79,12 +81,12 @@ pub fn hash_data(data: &[u8]) -> [u8; 32] {
 }
 
 /// Generate a random nonce
-pub fn generate_nonce() -> [u8; 32] {
+pub fn generate_nonce() -> Result<[u8; 32]> {
     let mut nonce = [0u8; 32];
     ring::rand::SystemRandom::new()
         .fill(&mut nonce)
-        .expect("Failed to generate random nonce");
-    nonce
+        .map_err(|_| Error::Other("Failed to generate random nonce".into()))?;
+    Ok(nonce)
 }
 
 /// A simple key store for managing cryptographic keys

@@ -116,7 +116,7 @@ impl QuicEngine {
         // Configure the transport parameters
         let mut transport_config = TransportConfig::default();
         transport_config.max_idle_timeout(Some(Duration::from_secs(config.idle_timeout).try_into().unwrap()));
-        transport_config.initial_mtu(config.mtu);
+        transport_config.initial_mtu(config.mtu as u16);
         
         // Generate a self-signed certificate for the server
         let (cert, key) = generate_self_signed_cert()?;
@@ -127,8 +127,7 @@ impl QuicEngine {
         // Create the endpoint
         let bind_addr: SocketAddr = config.bind_address.parse()
             .map_err(|_| Error::InvalidAddress(config.bind_address.clone()))?;
-        
-        let (endpoint, _) = Endpoint::server(server_config, bind_addr)?;
+        let endpoint = Endpoint::server(server_config, bind_addr)?;
         
         // Create the fragmenter
         let fragmenter = Arc::new(Fragmenter::new(config.mtu));
@@ -149,9 +148,10 @@ impl QuicEngine {
         let mut server_config = ServerConfig::with_single_cert(vec![cert], key)?;
         
         // Set the transport configuration
-        Arc::get_mut(&mut server_config.transport)
-            .ok_or(Error::ConfigurationError("Failed to modify transport config".into()))?
-            .clone_from(&transport_config);
+        // Set the transport configuration
+        let transport_mut = Arc::get_mut(&mut server_config.transport)
+            .ok_or(Error::ConfigurationError("Failed to modify transport config".into()))?;
+        *transport_mut = transport_config;
         
         Ok(server_config)
     }

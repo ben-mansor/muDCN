@@ -69,6 +69,22 @@ pub enum Error {
     /// Generic error
     #[error("{0}")]
     Other(String),
+    
+    /// Invalid state error
+    #[error("Invalid state: {0}")]
+    InvalidState(String),
+    
+    /// Invalid argument error
+    #[error("Invalid argument: {0}")]
+    InvalidArgument(String),
+    
+    /// Not found error
+    #[error("Not found: {0}")]
+    NotFound(String),
+    
+    /// Operation error
+    #[error("Operation error: {0}")]
+    OperationError(String),
 }
 
 // Convert from Quinn write error

@@ -85,7 +85,7 @@ impl Interest {
     }
     
     /// Get the Interest lifetime
-    pub fn lifetime(&self) -> Duration {
+    pub fn get_lifetime(&self) -> Duration {
         Duration::from_millis(self.lifetime_ms)
     }
     
@@ -230,6 +230,7 @@ impl fmt::Display for Interest {
 
 /// Content type for NDN Data packets
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[repr(u8)]
 pub enum ContentType {
     Blob = 0,
     Link = 1,
@@ -319,7 +320,7 @@ impl Data {
     }
     
     /// Get the fresh period
-    pub fn fresh_period(&self) -> Duration {
+    pub fn get_fresh_period(&self) -> Duration {
         Duration::from_millis(self.fresh_period_ms)
     }
     
@@ -486,14 +487,14 @@ impl fmt::Display for Data {
 
 /// NACK reason codes
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[repr(u16)]
 pub enum NackReason {
-    Congestion = 50,
-    NoRoute = 100,
-    NoContent = 150,
-    NoResource = 200,
-    Duplicate = 250,
-    NotAuth = 300,
-    Other(u16),
+    NoContent = 0,
+    Congestion = 1,
+    Duplicate = 2,
+    NoRoute = 3,
+    ProhibitedContent = 4,
+    Custom(u16),
 }
 
 impl From<u16> for NackReason {

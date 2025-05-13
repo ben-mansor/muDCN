@@ -36,6 +36,9 @@ libc = "0.2.147"
 hickory-resolver = "0.24.0"  # DNS resolution
 parking_lot = "0.12.1"  # Efficient synchronization primitives
 hex = "0.4.3"      # Hex encoding/decoding
+# Added missing dependencies
+rustls = "0.21.0"  # TLS implementation for QUIC
+lazy_static = "1.4.0"  # For static initialization of metrics
 
 [dev-dependencies]
 criterion = "0.5.1"

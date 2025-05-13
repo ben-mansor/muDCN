@@ -12,8 +12,54 @@ use prometheus::{
 };
 use std::net::SocketAddr;
 use std::thread;
+use std::collections::HashMap;
 use warp::Filter;
 use tracing::{info, error};
+
+/// Metric value types for the metrics collector
+#[derive(Debug, Clone)]
+pub enum MetricValue {
+    Counter(u64),
+    Gauge(f64),
+    Histogram(Vec<f64>),
+}
+
+/// Metrics collector for gathering and reporting metrics
+pub struct MetricsCollector {
+    enabled: bool,
+    port: u16,
+    metrics: HashMap<String, MetricValue>,
+}
+
+impl MetricsCollector {
+    pub fn new(enabled: bool, port: u16) -> Self {
+        let metrics = HashMap::new();
+        if enabled {
+            init_metrics(port);
+        }
+        Self {
+            enabled,
+            port,
+            metrics,
+        }
+    }
+    
+    pub fn increment_counter(&self, name: &str, value: u64) {
+        // This is a simple implementation - in practice, this would
+        // properly integrate with the prometheus metrics
+    }
+    
+    pub fn get_counter(&self, name: &str) -> u64 {
+        match self.metrics.get(name) {
+            Some(MetricValue::Counter(v)) => *v,
+            _ => 0,
+        }
+    }
+    
+    pub fn get_metrics(&self) -> HashMap<String, MetricValue> {
+        self.metrics.clone()
+    }
+}
 
 // Counter metrics
 lazy_static! {

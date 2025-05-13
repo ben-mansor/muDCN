@@ -31,7 +31,7 @@ impl Component {
     
     /// Create a new component from a string
     pub fn from_str(s: &str) -> Self {
-        Self::new(s.as_bytes())
+        Self::new(Bytes::copy_from_slice(s.as_bytes()))
     }
     
     /// Get the value of the component as bytes
@@ -244,6 +244,11 @@ impl Name {
         true
     }
     
+    /// Check if this name has the given prefix (for matching Interest to Name)
+    pub fn has_prefix(&self, other: &Name) -> bool {
+        other.starts_with(self)
+    }
+    
     /// Encode the name as TLV
     pub fn to_tlv(&self) -> BytesMut {
         let mut buf = BytesMut::new();
@@ -340,8 +345,8 @@ impl Hash for Name {
     }
 }
 
-impl<'a> From<&'a str> for Name {
-    fn from(s: &'a str) -> Self {
+impl From<&str> for Name {
+    fn from(s: &str) -> Self {
         Self::from_uri(s).unwrap_or_else(|_| Self::new())
     }
 }

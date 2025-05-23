@@ -1,16 +1,10 @@
 [package]
-name = "rust-ndn-transport"
+name = "udcn-transport"
 version = "0.1.0"
 edition = "2021"
 authors = ["μDCN Team"]
 description = "High-performance Rust NDN transport layer with QUIC integration for μDCN"
 license = "MIT"
-
-# Enable cdylib for Python bindings
-[lib]
-name = "rust_ndn_transport"
-path = "src/lib.rs"
-crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 # QUIC implementation - Quinn is a pure-Rust QUIC implementation
@@ -18,7 +12,6 @@ quinn = "0.9.3"  # Downgraded
 tokio = { version = "1.28.0", features = ["full"] }  # Downgraded
 bytes = "1.4.0"
 structopt = "0.3.26"
-clap = { version = "4.3.3", features = ["derive"] }  # Command line argument parsing
 dashmap = "5.4.0"  # Thread-safe concurrent HashMap
 lru = "0.10.0"     # Downgraded
 sha2 = "0.10.7"    # Hashing for NDN names
@@ -46,12 +39,6 @@ hex = "0.4.3"      # Hex encoding/decoding
 # Added missing dependencies
 rustls = "0.20.8"  # Downgraded
 lazy_static = "1.4.0"  # For static initialization of metrics
-# Force home crate to a compatible version
-home = "=0.5.5"
-
-# Python bindings with PyO3
-pyo3 = { version = "0.18.3", features = ["extension-module", "abi3-py38"] }
-numpy = { version = "0.18.0" }
 
 # Add features flag to enable tokio test
 [features]
@@ -67,6 +54,10 @@ tonic-build = "0.9.1"   # Downgraded
 [[bin]]
 name = "udcn-node"
 path = "src/bin/node.rs"
+
+[lib]
+name = "udcn_transport"
+path = "src/lib.rs"
 
 # Optimize for speed in release mode
 [profile.release]

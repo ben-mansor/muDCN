@@ -1,0 +1,35 @@
+μDCN PROJECT - PHASE 4 (ML-BASED MTU PREDICTION) ARCHIVE MANIFEST
+=============================================================
+Archive Date: May 16, 2025
+Repository Tag: v0.4
+
+ARCHIVED COMPONENTS
+------------------
+
+1. ML MODEL & TRAINING:
+   - ml_models/mtu_predictor.py - Core TensorFlow Lite model implementation
+   - ml_models/mtu_predictor_wrapper.py - Python wrapper for model integration
+   - ml_models/train_and_test_model.py - Training script with synthetic data generation
+
+2. PYTHON CLIENT INTEGRATION:
+   - python_client/ml_integration.py - Python control plane integration
+   - python_client/mtu_test_script.py - Test script for ML predictions
+
+3. DOCUMENTATION:
+   - README.md - Documentation of the archived components
+   - MANIFEST.txt - This file
+
+ARCHIVED IMPLEMENTATION NOTES
+----------------------------
+- The ML model uses TensorFlow Lite for efficient inference
+- Synthetic dataset is generated dynamically during training
+- Model supports overrides for manual MTU configuration
+- Prediction history is maintained for monitoring and analysis
+- gRPC API implemented for control plane integration
+
+DO NOT MODIFY
+------------
+The following components should not be modified without explicit approval:
+- ML prediction module
+- ML model architecture or training parameters
+- gRPC API structure for ML integration

@@ -12,12 +12,10 @@ use std::time::Duration;
 
 use tokio::sync::RwLock;
 use tokio::time;
-use tracing::{debug, error, info, warn};
+use tracing::{debug, info};
 
 use crate::error::Error;
-use crate::name::Name;
 use crate::Result;
-use crate::metrics;
 
 /// Network protocol type
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -176,13 +174,13 @@ impl Face {
 /// Interface manager for handling network interfaces and faces
 pub struct InterfaceManager {
     /// Network interfaces
-    interfaces: RwLock<HashMap<String, InterfaceInfo>>,
+    interfaces: Arc<RwLock<HashMap<String, InterfaceInfo>>>,
     
     /// Faces
-    faces: RwLock<HashMap<u32, Face>>,
+    faces: Arc<RwLock<HashMap<u32, Face>>>,
     
     /// Next face ID
-    next_face_id: RwLock<u32>,
+    next_face_id: Arc<RwLock<u32>>,
     
     /// Idle timeout for faces
     idle_timeout: Duration,
@@ -192,16 +190,16 @@ impl InterfaceManager {
     /// Create a new interface manager
     pub fn new(idle_timeout: Duration) -> Self {
         Self {
-            interfaces: RwLock::new(HashMap::new()),
-            faces: RwLock::new(HashMap::new()),
-            next_face_id: RwLock::new(1),
+            interfaces: Arc::new(RwLock::new(HashMap::new())),
+            faces: Arc::new(RwLock::new(HashMap::new())),
+            next_face_id: Arc::new(RwLock::new(1)),
             idle_timeout,
         }
     }
     
     /// Start the interface manager
     pub async fn start(&self) -> Result<()> {
-        // Discover network interfaces
+        // Discover interfaces
         self.discover_interfaces().await?;
         
         // Start the cleanup task
@@ -214,8 +212,8 @@ impl InterfaceManager {
     async fn start_cleanup_task(&self) {
         let idle_timeout = self.idle_timeout;
         
-        // Clone the arc to move into the task
-        let faces = self.faces.clone();
+        // Clone the Arc containing the RwLock
+        let faces = Arc::clone(&self.faces);
         
         tokio::spawn(async move {
             let mut interval = time::interval(Duration::from_secs(60));
@@ -224,17 +222,28 @@ impl InterfaceManager {
                 interval.tick().await;
                 
                 // Clean up idle faces
-                let mut faces_lock = faces.write().await;
-                let idle_faces: Vec<u32> = faces_lock
-                    .iter()
-                    .filter(|(_, face)| face.is_idle(idle_timeout))
-                    .map(|(id, _)| *id)
-                    .collect();
+                let mut faces_to_remove = Vec::new();
                 
-                for id in idle_faces {
-                    if let Some(face) = faces_lock.remove(&id) {
-                        info!("Removed idle face {} to {}", id, face.remote);
+                {
+                    let mut faces_lock = faces.write().await;
+                    
+                    for (id, face) in faces_lock.iter() {
+                        if face.is_idle(idle_timeout) {
+                            faces_to_remove.push(*id);
+                        }
                     }
+                    
+                    // Remove idle faces
+                    for id in &faces_to_remove {
+                        if let Some(face) = faces_lock.remove(id) {
+                            info!("Removed idle face {} to {}", id, face.remote);
+                        }
+                    }
+                }
+                
+                // Log cleanup info
+                if !faces_to_remove.is_empty() {
+                    debug!("Cleaned up {} idle faces", faces_to_remove.len());
                 }
             }
         });
@@ -242,44 +251,39 @@ impl InterfaceManager {
     
     /// Discover network interfaces
     pub async fn discover_interfaces(&self) -> Result<()> {
-        // In a real implementation, this would use platform-specific APIs
-        // For this prototype, we'll just create a dummy interface
+        info!("Discovering network interfaces");
         
+        // For this prototype, we'll just add some dummy interfaces
+        // In a real implementation, this would discover actual interfaces
         let mut interfaces = self.interfaces.write().await;
         
-        // Add a loopback interface
-        interfaces.insert(
-            "lo".to_string(),
-            InterfaceInfo {
-                name: "lo".to_string(),
-                index: 1,
-                mtu: 65536,
-                addresses: vec![
-                    IpAddr::V4(Ipv4Addr::new(127, 0, 0, 1)),
-                    IpAddr::V6(Ipv6Addr::new(0, 0, 0, 0, 0, 0, 0, 1)),
-                ],
-                is_up: true,
-                is_multicast: false,
-            },
-        );
+        // Add loopback interface
+        interfaces.insert("lo".to_string(), InterfaceInfo {
+            name: "lo".to_string(),
+            index: 1,
+            mtu: 65535,
+            addresses: vec![
+                IpAddr::V4(Ipv4Addr::new(127, 0, 0, 1)),
+                IpAddr::V6(Ipv6Addr::new(0, 0, 0, 0, 0, 0, 0, 1)),
+            ],
+            is_up: true,
+            is_multicast: false,
+        });
         
-        // Add a dummy Ethernet interface
-        interfaces.insert(
-            "eth0".to_string(),
-            InterfaceInfo {
-                name: "eth0".to_string(),
-                index: 2,
-                mtu: 1500,
-                addresses: vec![
-                    IpAddr::V4(Ipv4Addr::new(192, 168, 1, 100)),
-                    IpAddr::V6(Ipv6Addr::new(0xfe80, 0, 0, 0, 0, 0, 0, 0x100)),
-                ],
-                is_up: true,
-                is_multicast: true,
-            },
-        );
+        // Add eth0 interface
+        interfaces.insert("eth0".to_string(), InterfaceInfo {
+            name: "eth0".to_string(),
+            index: 2,
+            mtu: 1500,
+            addresses: vec![
+                IpAddr::V4(Ipv4Addr::new(192, 168, 1, 100)),
+                IpAddr::V6(Ipv6Addr::new(0xfe80, 0, 0, 0, 0, 0, 0, 1)),
+            ],
+            is_up: true,
+            is_multicast: true,
+        });
         
-        info!("Discovered {} network interfaces", interfaces.len());
+        info!("Discovered {} interfaces", interfaces.len());
         
         Ok(())
     }
@@ -308,12 +312,13 @@ impl InterfaceManager {
         info!("Created face {} to {} via {:?}", id, remote, protocol);
         
         // Store the face
-        let face_arc = Arc::new(RwLock::new(face));
+        {
+            let mut faces = self.faces.write().await;
+            faces.insert(id, face.clone());
+        }
         
-        let mut faces = self.faces.write().await;
-        faces.insert(id, (*face_arc.read().await).clone());
-        
-        Ok(face_arc)
+        // Return an Arc-wrapped RwLock containing the face
+        Ok(Arc::new(RwLock::new(face)))
     }
     
     /// Get a face by ID
@@ -347,7 +352,7 @@ impl InterfaceManager {
             info!("Removed face {} to {}", id, face.remote);
             Ok(())
         } else {
-            Err(Error::Other(format!("Face not found: {}", id)))
+            Err(Error::NotFound(format!("Face not found: {}", id)))
         }
     }
     
@@ -379,7 +384,7 @@ impl InterfaceManager {
             // Default MTU
             Ok(1400)
         } else {
-            Err(Error::Other(format!("Face not found: {}", face_id)))
+            Err(Error::NotFound(format!("Face not found: {}", face_id)))
         }
     }
 }

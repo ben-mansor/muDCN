@@ -5,7 +5,7 @@
 //
 
 use std::fmt;
-use std::time::{Duration, SystemTime};
+use std::time::Duration;
 
 use bytes::{Buf, BufMut, Bytes, BytesMut};
 
@@ -233,9 +233,9 @@ impl fmt::Display for Interest {
 #[repr(u8)]
 pub enum ContentType {
     Blob = 0,
-    Link = 1,
+    Link = 1, 
     Key = 2,
-    Nack = 3,
+    Cert = 3,
     Manifest = 4,
     PrefixAnn = 5,
     Custom(u8),
@@ -247,7 +247,7 @@ impl From<u8> for ContentType {
             0 => ContentType::Blob,
             1 => ContentType::Link,
             2 => ContentType::Key,
-            3 => ContentType::Nack,
+            3 => ContentType::Cert,
             4 => ContentType::Manifest,
             5 => ContentType::PrefixAnn,
             n => ContentType::Custom(n),
@@ -326,7 +326,7 @@ impl Data {
     
     /// Sign the Data packet (placeholder)
     /// In a real implementation, this would use proper crypto
-    pub fn sign(mut self, key: &[u8]) -> Self {
+    pub fn sign(mut self, _key: &[u8]) -> Self {
         // Placeholder for signature logic
         self.signature_info = vec![1]; // Dummy value
         self.signature_value = vec![2]; // Dummy value
@@ -363,7 +363,7 @@ impl Data {
         // MetaInfo
         buf.put_u8(tlv_type::META_INFO);
         buf.put_u8(1); // 1 byte
-        buf.put_u8(self.content_type as u8);
+        // Convert content type to u8 safely\n        let content_type_value = match self.content_type {\n            ContentType::Blob => 0,\n            ContentType::Link => 1,\n            ContentType::Key => 2,\n            ContentType::Cert => 3,\n            ContentType::Manifest => 4,\n            ContentType::PrefixAnn => 5,\n            ContentType::Custom(n) => n,\n        };\n        buf.put_u8(content_type_value);
         
         // Content
         buf.put_u8(tlv_type::CONTENT);
@@ -489,24 +489,29 @@ impl fmt::Display for Data {
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 #[repr(u16)]
 pub enum NackReason {
-    NoContent = 0,
-    Congestion = 1,
-    Duplicate = 2,
-    NoRoute = 3,
-    ProhibitedContent = 4,
-    Custom(u16),
+    /// No route to destination
+    NoRoute = 100,
+    /// Congestion
+    Congestion = 101,
+    /// Duplicate
+    Duplicate = 102,
+    /// No resource available
+    NoResource = 200,
+    /// Not authorized
+    NotAuth = 300,
+    /// Other reason with code
+    Other = 900,
 }
 
 impl From<u16> for NackReason {
     fn from(val: u16) -> Self {
         match val {
-            50 => NackReason::Congestion,
             100 => NackReason::NoRoute,
-            150 => NackReason::NoContent,
+            101 => NackReason::Congestion,
+            102 => NackReason::Duplicate,
             200 => NackReason::NoResource,
-            250 => NackReason::Duplicate,
             300 => NackReason::NotAuth,
-            n => NackReason::Other(n),
+            _ => NackReason::Other,
         }
     }
 }
@@ -538,7 +543,7 @@ impl Nack {
     pub fn from_interest(interest: Interest, message: String) -> Self {
         Self {
             interest,
-            reason: NackReason::NoContent,
+            reason: NackReason::NoRoute,
             message,
         }
     }
@@ -633,7 +638,7 @@ impl Nack {
         value.advance(interest_size);
         
         // Default values
-        let mut reason = NackReason::NoContent;
+        let mut reason = NackReason::NoRoute;
         let mut message = String::new();
         
         // Parse remaining TLVs

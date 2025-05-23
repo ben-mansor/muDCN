@@ -1,0 +1,358 @@
+//
+// μDCN QUIC Transport Engine
+//
+// This module implements the QUIC-based transport engine that maps NDN
+// names to QUIC stream IDs and handles fragmentation/reassembly.
+//
+
+use std::collections::HashMap;
+use std::net::SocketAddr;
+use std::sync::Arc;
+use std::time::Duration;
+
+use quinn::{Endpoint, ServerConfig, TransportConfig, VarInt};
+use rustls::{Certificate, PrivateKey};
+use tokio::sync::{Mutex, RwLock};
+use dashmap::DashMap;
+use futures::StreamExt;
+use tracing::{debug, error, info, warn};
+
+use crate::error::Error;
+use crate::ndn::{Interest, Data, Nack};
+use crate::name::Name;
+use crate::security::generate_self_signed_cert;
+use crate::fragmentation::Fragmenter;
+use crate::metrics;
+use crate::{Config, Result};
+
+/// Handler function type for serving prefix registrations
+pub type PrefixHandler = Box<dyn Fn(Interest) -> Result<Data> + Send + Sync + 'static>;
+
+/// Maps QUIC stream IDs to NDN names and vice versa
+pub struct NameStreamMapper {
+    /// Map from NDN name to QUIC stream ID
+    name_to_stream: DashMap<Name, u64>,
+    
+    /// Map from QUIC stream ID to NDN name
+    stream_to_name: DashMap<u64, Name>,
+    
+    /// Next available stream ID
+    next_stream_id: Mutex<u64>,
+}
+
+impl NameStreamMapper {
+    /// Create a new empty mapper
+    pub fn new() -> Self {
+        Self {
+            name_to_stream: DashMap::new(),
+            stream_to_name: DashMap::new(),
+            next_stream_id: Mutex::new(0),
+        }
+    }
+    
+    /// Map an NDN name to a QUIC stream ID
+    /// If the name is already mapped, return the existing ID
+    /// Otherwise, allocate a new ID
+    pub async fn get_or_create_stream_id(&self, name: &Name) -> u64 {
+        // Check if the name is already mapped
+        if let Some(stream_id) = self.name_to_stream.get(name) {
+            return *stream_id;
+        }
+        
+        // Allocate a new stream ID
+        let mut next_id = self.next_stream_id.lock().await;
+        let stream_id = *next_id;
+        *next_id += 2; // Increment by 2 to avoid conflicts with peer-initiated streams
+        
+        // Insert the mappings
+        self.name_to_stream.insert(name.clone(), stream_id);
+        self.stream_to_name.insert(stream_id, name.clone());
+        
+        stream_id
+    }
+    
+    /// Get the NDN name for a given QUIC stream ID
+    pub fn get_name(&self, stream_id: u64) -> Option<Name> {
+        self.stream_to_name.get(&stream_id).map(|name| name.clone())
+    }
+    
+    /// Get the QUIC stream ID for a given NDN name
+    pub fn get_stream_id(&self, name: &Name) -> Option<u64> {
+        self.name_to_stream.get(name).map(|id| *id)
+    }
+    
+    /// Remove a mapping
+    pub fn remove(&self, name: &Name) {
+        if let Some(stream_id) = self.name_to_stream.remove(name) {
+            self.stream_to_name.remove(&stream_id.1);
+        }
+    }
+}
+
+/// QUIC engine for the μDCN transport layer
+pub struct QuicEngine {
+    /// QUIC endpoint for communication
+    endpoint: Endpoint,
+    
+    /// Name to stream mapper
+    mapper: Arc<NameStreamMapper>,
+    
+    /// Active connections
+    connections: Arc<RwLock<HashMap<SocketAddr, quinn::Connection>>>,
+    
+    /// Prefix registrations
+    prefixes: Arc<RwLock<HashMap<Name, PrefixHandler>>>,
+    
+    /// Configuration options
+    config: Arc<Config>,
+    
+    /// Fragmenter for large data objects
+    fragmenter: Arc<Fragmenter>,
+}
+
+impl QuicEngine {
+    /// Create a new QUIC engine with the given configuration
+    pub async fn new(config: &Config) -> Result<Self> {
+        // Configure the transport parameters
+        let mut transport_config = TransportConfig::default();
+        transport_config.max_idle_timeout(Some(Duration::from_secs(config.idle_timeout).try_into().unwrap()));
+        transport_config.initial_mtu(config.mtu as u16);
+        
+        // Generate a self-signed certificate for the server
+        let (cert, key) = generate_self_signed_cert()?;
+        
+        // Configure the server
+        let server_config = Self::configure_server(cert, key, transport_config)?;
+        
+        // Create the endpoint
+        let bind_addr: SocketAddr = config.bind_address.parse()
+            .map_err(|_| Error::InvalidAddress(config.bind_address.clone()))?;
+        let endpoint = Endpoint::server(server_config, bind_addr)?;
+        
+        // Create the fragmenter
+        let fragmenter = Arc::new(Fragmenter::new(config.mtu));
+        
+        Ok(Self {
+            endpoint,
+            mapper: Arc::new(NameStreamMapper::new()),
+            connections: Arc::new(RwLock::new(HashMap::new())),
+            prefixes: Arc::new(RwLock::new(HashMap::new())),
+            config: Arc::new(config.clone()),
+            fragmenter,
+        })
+    }
+    
+    /// Configure the QUIC server
+    fn configure_server(cert: Certificate, key: PrivateKey, transport_config: TransportConfig) -> Result<ServerConfig> {
+        // Set up the server certificate
+        let mut server_config = ServerConfig::with_single_cert(vec![cert], key)?;
+        
+        // Set the transport configuration
+        // Set the transport configuration
+        let transport_mut = Arc::get_mut(&mut server_config.transport)
+            .ok_or(Error::ConfigurationError("Failed to modify transport config".into()))?;
+        *transport_mut = transport_config;
+        
+        Ok(server_config)
+    }
+    
+    /// Start the QUIC engine and listen for incoming connections
+    pub async fn start(&self) -> Result<()> {
+        let mapper = Arc::clone(&self.mapper);
+        let connections = Arc::clone(&self.connections);
+        let prefixes = Arc::clone(&self.prefixes);
+        let fragmenter = Arc::clone(&self.fragmenter);
+        
+        // Spawn a task to accept incoming connections
+        tokio::spawn(async move {
+            info!("Accepting incoming QUIC connections");
+            
+            // Accept incoming connections
+            while let Some(conn) = self.endpoint.accept().await {
+                let remote = conn.remote_address();
+                
+                debug!("Accepted connection from {}", remote);
+                
+                match conn.await {
+                    Ok(connection) => {
+                        // Store the connection
+                        connections.write().await.insert(remote, connection.clone());
+                        
+                        // Clone the necessary objects for the connection handler
+                        let conn_mapper = Arc::clone(&mapper);
+                        let conn_prefixes = Arc::clone(&prefixes);
+                        let conn_fragmenter = Arc::clone(&fragmenter);
+                        
+                        // Spawn a task to handle the connection
+                        tokio::spawn(async move {
+                            Self::handle_connection(connection, remote, conn_mapper, conn_prefixes, conn_fragmenter).await;
+                        });
+                    }
+                    Err(e) => {
+                        error!("Connection failed: {}", e);
+                    }
+                }
+            }
+        });
+        
+        Ok(())
+    }
+    
+    /// Handle a QUIC connection
+    async fn handle_connection(
+        connection: quinn::Connection, 
+        remote: SocketAddr,
+        mapper: Arc<NameStreamMapper>,
+        prefixes: Arc<RwLock<HashMap<Name, PrefixHandler>>>,
+        fragmenter: Arc<Fragmenter>
+    ) {
+        info!("Handling connection from {}", remote);
+        
+        // Accept incoming streams
+        while let Some(stream) = connection.accept_bi().await.ok() {
+            let (mut send, mut recv) = stream;
+            
+            // Read the Interest from the stream
+            let mut buf = Vec::new();
+            match recv.read_to_end(1024 * 1024).await { // 1MB limit
+                Ok(data) => {
+                    buf.extend_from_slice(&data);
+                }
+                Err(e) => {
+                    error!("Failed to read from stream: {}", e);
+                    continue;
+                }
+            }
+            
+            // Deserialize the Interest
+            let interest = match Interest::from_bytes(&buf) {
+                Ok(interest) => interest,
+                Err(e) => {
+                    error!("Failed to deserialize Interest: {}", e);
+                    continue;
+                }
+            };
+            
+            let name = interest.name().clone();
+            debug!("Received Interest for {}", name);
+            
+            // Check if we have a prefix registration for this Interest
+            let prefixes_lock = prefixes.read().await;
+            let mut data_to_send: Option<Data> = None;
+            
+            // We need to clone interest here since we'll use it again later if it's not handled
+            // Making a controlled clone upfront is better than using .clone() in multiple places
+            let interest_clone = interest.clone();
+            
+            // Find a matching handler and generate response
+            let mut data_option = None;
+            
+            // Scope for the read lock
+            {
+                let prefixes_lock = prefixes.read().await;
+                
+                for (prefix, handler) in prefixes_lock.iter() {
+                    if interest_clone.name().has_prefix(prefix) {
+                        // Try to handle the interest
+                        match handler(interest_clone.clone()) {
+                            Ok(data) => {
+                                data_option = Some(data);
+                                break;
+                            }
+                            Err(e) => {
+                                warn!("Error handling interest: {}", e);
+                                // Create NACK response for application error
+                                let nack = Nack::from_interest(interest_clone.clone(), e.to_string());
+                                let nack_bytes = nack.to_bytes();
+                                send.write_all(&nack_bytes).await?;
+                                return;
+                            }
+                        }
+                        metrics::record_interest_satisfied();
+                    }
+                    Err(e) => {
+                        error!("Handler error: {}", e);
+                        
+                        // Send a NACK
+                        let nack = Nack::from_interest(interest.clone(), e.to_string());
+                        if let Err(e) = send.write_all(&nack.to_bytes()).await {
+                            error!("Failed to send NACK: {}", e);
+                        }
+                        
+                        // Record the error
+                        metrics::record_interest_error();
+                    }
+                }
+            } else {
+                // No handler found, send a NACK
+                warn!("No handler for {}", name);
+                
+                let nack = Nack::from_interest(interest, "No handler for this prefix".into());
+                if let Err(e) = send.write_all(&nack.to_bytes()).await {
+                    error!("Failed to send NACK: {}", e);
+                }
+                
+                // Record the miss
+                metrics::record_interest_miss();
+            }
+        }
+        
+        info!("Connection from {} closed", remote);
+    }
+    
+    /// Send an Interest packet and wait for the Data response
+    pub async fn send_interest(&self, interest: Interest) -> Result<Data> {
+        // Clone the interest early to avoid multiple borrows
+        let interest_clone = interest.clone();
+        let name = interest.name().clone();
+        
+        // Find a suitable connection for this name
+        // In a real implementation, this would use a routing table
+        // For now, we'll just use the first connection
+        let connections = self.connections.read().await;
+        let connection = connections.values().next().ok_or(Error::NoConnections)?;
+        
+        // Create a stream ID for the name (ignoring result to fix warning)
+            .iter()
+            .for_each(|b| buf.push(*b));
+        
+        // Deserialize the response
+        let data = Data::from_bytes(&buf)?;
+        
+        Ok(data)
+    }
+    
+    /// Register a prefix for serving data
+    pub async fn register_prefix(&self, prefix: Name, handler: PrefixHandler) -> Result<()> {
+        let mut prefixes = self.prefixes.write().await;
+        prefixes.insert(prefix, handler);
+        Ok(())
+    }
+    
+    /// Update the MTU
+    pub async fn update_mtu(&self, new_mtu: usize) -> Result<()> {
+        // Update the fragmenter
+        self.fragmenter.update_mtu(new_mtu).await;
+        
+        // In a real implementation, we would also update the QUIC transport config
+        // For this prototype, we'll just log it
+        info!("Updated MTU to {}", new_mtu);
+        
+        Ok(())
+    }
+    
+    /// Shutdown the QUIC engine
+    pub async fn shutdown(&self) -> Result<()> {
+        // Close all connections
+        let connections = self.connections.read().await;
+        for (addr, connection) in connections.iter() {
+            info!("Closing connection to {}", addr);
+            connection.close(VarInt::from_u32(0), b"shutdown");
+        }
+        
+        // Close the endpoint
+        self.endpoint.close(VarInt::from_u32(0), b"shutdown");
+        
+        Ok(())
+    }
+}

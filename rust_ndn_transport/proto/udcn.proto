@@ -1,0 +1,159 @@
+syntax = "proto3";
+
+package udcn;
+
+service UdcnControl {
+  rpc GetMtu (MtuRequest) returns (MtuResponse);
+  rpc RegisterPrefix (PrefixRegistrationRequest) returns (PrefixRegistrationResponse);
+  rpc UnregisterPrefix (PrefixUnregistrationRequest) returns (PrefixUnregistrationResponse);
+  rpc GetMetrics (MetricsRequest) returns (stream MetricsData);
+  rpc ConfigureTransport (TransportConfigRequest) returns (TransportConfigResponse);
+  rpc ControlTransport (TransportControlRequest) returns (TransportControlResponse);
+  rpc GetTransportState (TransportStateRequest) returns (TransportStateResponse);
+  rpc GetNetworkInterfaces (NetworkInterfacesRequest) returns (NetworkInterfacesResponse);
+}
+
+message MtuRequest {
+  string face_id = 1;
+}
+
+message MtuResponse {
+  bool success = 1;
+  string error_message = 2;
+  uint32 mtu = 3;
+}
+
+message PrefixRegistrationRequest {
+  string prefix = 1;
+  bool persistent = 2;
+}
+
+message PrefixRegistrationResponse {
+  bool success = 1;
+  string error_message = 2;
+  uint64 registration_id = 3;
+}
+
+message PrefixUnregistrationRequest {
+  uint64 registration_id = 1;
+}
+
+message PrefixUnregistrationResponse {
+  bool success = 1;
+  string error_message = 2;
+}
+
+message MetricsRequest {
+  repeated string metric_names = 1;
+  uint32 interval_ms = 2;
+}
+
+message MetricsData {
+  uint64 timestamp = 1;
+  map<string, MetricValue> metrics = 2;
+}
+
+message MetricValue {
+  uint64 timestamp = 1;
+  oneof value {
+    uint64 counter_value = 2;
+    double gauge_value = 3;
+    Histogram histogram_value = 4;
+  }
+}
+
+message Histogram {
+  uint64 count = 1;
+  double sum = 2;
+  repeated uint64 bucket_bounds = 3;
+  repeated uint64 bucket_counts = 4;
+}
+
+message TransportConfigRequest {
+  uint32 mtu = 1;
+  uint32 cache_capacity = 2;
+  uint32 idle_timeout = 3;
+  bool enable_metrics = 4;
+  uint32 metrics_port = 5;
+  string bind_address = 6;
+  map<string, string> advanced_config = 7;
+}
+
+message TransportConfig {
+  uint32 mtu = 1;
+  uint32 cache_capacity = 2;
+  uint32 idle_timeout = 3;
+  bool enable_metrics = 4;
+  uint32 metrics_port = 5;
+  string bind_address = 6;
+  map<string, string> advanced_config = 7;
+}
+
+message TransportConfigResponse {
+  bool success = 1;
+  string error_message = 2;
+  TransportConfig current_config = 3;
+}
+
+message TransportControlRequest {
+  enum Action {
+    START = 0;
+    STOP = 1;
+    PAUSE = 2;
+    RESUME = 3;
+    RESTART = 4;
+  }
+  Action action = 1;
+}
+
+message TransportControlResponse {
+  bool success = 1;
+  string error_message = 2;
+  TransportState current_state = 3;
+}
+
+enum TransportState {
+  RUNNING = 0;
+  STOPPED = 1;
+  PAUSED = 2;
+  ERROR = 3;
+  STARTING = 4;
+  STOPPING = 5;
+}
+
+message TransportStateRequest {
+  bool include_detailed_stats = 1;
+}
+
+message TransportStateResponse {
+  bool success = 1;
+  string error_message = 2;
+  TransportState state = 3;
+  uint32 uptime_seconds = 4;
+  uint64 interests_processed = 5;
+  uint64 data_packets_sent = 6;
+  uint64 cache_hits = 7;
+  uint64 cache_misses = 8;
+  double cache_hit_ratio = 9;
+  map<string, string> detailed_stats = 10;
+}
+
+message NetworkInterfacesRequest {
+  bool include_stats = 1;
+}
+
+message NetworkInterface {
+  string name = 1;
+  uint32 index = 2;
+  uint32 mtu = 3;
+  repeated string addresses = 4;
+  bool is_up = 5;
+  bool is_multicast = 6;
+  map<string, string> stats = 7;
+}
+
+message NetworkInterfacesResponse {
+  bool success = 1;
+  string error_message = 2;
+  repeated NetworkInterface interfaces = 3;
+}

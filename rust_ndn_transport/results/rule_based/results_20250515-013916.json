@@ -1,0 +1,3752 @@
+[
+  {
+    "iteration": 0,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 9.154752659317918,
+      "avg_throughput_bps": 925324979.1653354,
+      "packet_loss_rate": 0.00010792152849122188,
+      "congestion_window": 10,
+      "avg_packet_size": 1097,
+      "packet_size_stddev": 280.5900806372549,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 1,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.890266189331728,
+      "avg_throughput_bps": 999822283.5164602,
+      "packet_loss_rate": 9.240739575627459e-05,
+      "congestion_window": 10,
+      "avg_packet_size": 1585,
+      "packet_size_stddev": 259.8546363027242,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1600
+  },
+  {
+    "iteration": 2,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.6826662719277,
+      "avg_throughput_bps": 992503501.2756671,
+      "packet_loss_rate": 8.01221253917062e-05,
+      "congestion_window": 10,
+      "avg_packet_size": 1254,
+      "packet_size_stddev": 138.26527771337675,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 3,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.9607498483469,
+      "avg_throughput_bps": 1036633151.599706,
+      "packet_loss_rate": 9.967196708208655e-05,
+      "congestion_window": 10,
+      "avg_packet_size": 1410,
+      "packet_size_stddev": 218.6997585849,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 4,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 9.5659513033905,
+      "avg_throughput_bps": 1012512629.2184315,
+      "packet_loss_rate": 0.00011216259559808795,
+      "congestion_window": 10,
+      "avg_packet_size": 1394,
+      "packet_size_stddev": 266.6860206741123,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 5,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.011892446900285,
+      "avg_throughput_bps": 1080494496.0318859,
+      "packet_loss_rate": 0.00010703676668395907,
+      "congestion_window": 10,
+      "avg_packet_size": 1264,
+      "packet_size_stddev": 168.12109409059465,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 6,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 9.896463492936261,
+      "avg_throughput_bps": 941336605.6910994,
+      "packet_loss_rate": 0.00010507061274492326,
+      "congestion_window": 10,
+      "avg_packet_size": 941,
+      "packet_size_stddev": 107.96824853162738,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 7,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 9.847183975970376,
+      "avg_throughput_bps": 1095011338.6594763,
+      "packet_loss_rate": 0.00010914120114468299,
+      "congestion_window": 10,
+      "avg_packet_size": 1514,
+      "packet_size_stddev": 262.00149978333593,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 8,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.271330448318498,
+      "avg_throughput_bps": 1096554049.0539315,
+      "packet_loss_rate": 0.00011354794672999745,
+      "congestion_window": 10,
+      "avg_packet_size": 1432,
+      "packet_size_stddev": 275.2052133226827,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 9,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 9.610836940854485,
+      "avg_throughput_bps": 988868077.0295779,
+      "packet_loss_rate": 0.00010359821093718705,
+      "congestion_window": 10,
+      "avg_packet_size": 1308,
+      "packet_size_stddev": 125.48246955879188,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 10,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.668253084521982,
+      "avg_throughput_bps": 1008078313.5581293,
+      "packet_loss_rate": 0.00010035019469468548,
+      "congestion_window": 10,
+      "avg_packet_size": 1439,
+      "packet_size_stddev": 279.7139420993357,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 11,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.878772574121964,
+      "avg_throughput_bps": 999625762.0315523,
+      "packet_loss_rate": 8.389725257021293e-05,
+      "congestion_window": 10,
+      "avg_packet_size": 1271,
+      "packet_size_stddev": 294.09472514413005,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 12,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.800003122859,
+      "avg_throughput_bps": 1052646848.1591591,
+      "packet_loss_rate": 0.00011032308702891474,
+      "congestion_window": 10,
+      "avg_packet_size": 894,
+      "packet_size_stddev": 226.80580216986095,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 13,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 9.884001988615433,
+      "avg_throughput_bps": 957820809.2798718,
+      "packet_loss_rate": 8.658476941502e-05,
+      "congestion_window": 10,
+      "avg_packet_size": 1206,
+      "packet_size_stddev": 181.86780301998465,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 14,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.48974065230173,
+      "avg_throughput_bps": 1058336208.4191579,
+      "packet_loss_rate": 0.00010389615644222552,
+      "congestion_window": 10,
+      "avg_packet_size": 863,
+      "packet_size_stddev": 104.65398914091399,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 15,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.088699861500544,
+      "avg_throughput_bps": 937773990.6115683,
+      "packet_loss_rate": 8.839414886287433e-05,
+      "congestion_window": 10,
+      "avg_packet_size": 1341,
+      "packet_size_stddev": 290.14378319203695,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 16,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 9.253326899084604,
+      "avg_throughput_bps": 1095890955.469626,
+      "packet_loss_rate": 0.00010676961344227516,
+      "congestion_window": 10,
+      "avg_packet_size": 1598,
+      "packet_size_stddev": 255.02144995580682,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1600
+  },
+  {
+    "iteration": 17,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.227652768783301,
+      "avg_throughput_bps": 904945135.1226068,
+      "packet_loss_rate": 9.703504577130906e-05,
+      "congestion_window": 10,
+      "avg_packet_size": 1517,
+      "packet_size_stddev": 120.32757400645424,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 18,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.122840837066441,
+      "avg_throughput_bps": 1086436572.3287985,
+      "packet_loss_rate": 0.00010267071018375851,
+      "congestion_window": 10,
+      "avg_packet_size": 881,
+      "packet_size_stddev": 138.872089823097,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 19,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 9.353817716447793,
+      "avg_throughput_bps": 915031189.8884131,
+      "packet_loss_rate": 0.000105938143965882,
+      "congestion_window": 10,
+      "avg_packet_size": 1158,
+      "packet_size_stddev": 216.58885885673982,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 20,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 9.113862404302903,
+      "avg_throughput_bps": 1030671396.4732186,
+      "packet_loss_rate": 0.00011606398171699901,
+      "congestion_window": 10,
+      "avg_packet_size": 920,
+      "packet_size_stddev": 241.1906307246214,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 21,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.265193749602803,
+      "avg_throughput_bps": 904992872.3986416,
+      "packet_loss_rate": 8.475404842008787e-05,
+      "congestion_window": 10,
+      "avg_packet_size": 1544,
+      "packet_size_stddev": 127.96085895192712,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1600
+  },
+  {
+    "iteration": 22,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 9.047416099370167,
+      "avg_throughput_bps": 1066850982.3920935,
+      "packet_loss_rate": 0.00010622563150653406,
+      "congestion_window": 10,
+      "avg_packet_size": 1400,
+      "packet_size_stddev": 179.79725577266305,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 23,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 9.532412196828133,
+      "avg_throughput_bps": 1016061587.2190831,
+      "packet_loss_rate": 9.375303290693585e-05,
+      "congestion_window": 10,
+      "avg_packet_size": 986,
+      "packet_size_stddev": 130.96121483031553,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 24,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 9.351755257438437,
+      "avg_throughput_bps": 961664911.8572096,
+      "packet_loss_rate": 0.00010238679852741747,
+      "congestion_window": 10,
+      "avg_packet_size": 983,
+      "packet_size_stddev": 114.6636790409622,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 25,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.661678251357362,
+      "avg_throughput_bps": 1088449777.8619294,
+      "packet_loss_rate": 8.367712564855487e-05,
+      "congestion_window": 10,
+      "avg_packet_size": 1295,
+      "packet_size_stddev": 275.16074000731203,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 26,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 9.13633404995998,
+      "avg_throughput_bps": 1073694673.5183772,
+      "packet_loss_rate": 0.00011822005368248415,
+      "congestion_window": 10,
+      "avg_packet_size": 1163,
+      "packet_size_stddev": 175.91087045398865,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 27,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.434891591327723,
+      "avg_throughput_bps": 1076185390.8639941,
+      "packet_loss_rate": 0.00011719853033829366,
+      "congestion_window": 10,
+      "avg_packet_size": 1326,
+      "packet_size_stddev": 174.01580855828686,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 28,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.503534318598719,
+      "avg_throughput_bps": 962108558.7068565,
+      "packet_loss_rate": 0.0001020735504429581,
+      "congestion_window": 10,
+      "avg_packet_size": 844,
+      "packet_size_stddev": 173.159509387267,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 29,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.199144200531212,
+      "avg_throughput_bps": 1014748898.3837962,
+      "packet_loss_rate": 8.119064594483835e-05,
+      "congestion_window": 10,
+      "avg_packet_size": 1181,
+      "packet_size_stddev": 287.900848847312,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 30,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.943842556564503,
+      "avg_throughput_bps": 1043247632.8594396,
+      "packet_loss_rate": 0.00010579092490223537,
+      "congestion_window": 10,
+      "avg_packet_size": 1000,
+      "packet_size_stddev": 116.98177572138992,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 31,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 9.912595570608955,
+      "avg_throughput_bps": 931131018.3845526,
+      "packet_loss_rate": 0.00011508228120431021,
+      "congestion_window": 10,
+      "avg_packet_size": 950,
+      "packet_size_stddev": 211.17775572640636,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 32,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.95723418727577,
+      "avg_throughput_bps": 987671031.0302166,
+      "packet_loss_rate": 0.00010139705215081034,
+      "congestion_window": 10,
+      "avg_packet_size": 1471,
+      "packet_size_stddev": 220.7633047708912,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 33,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.976356838582483,
+      "avg_throughput_bps": 979603713.4574839,
+      "packet_loss_rate": 9.243412788398818e-05,
+      "congestion_window": 10,
+      "avg_packet_size": 1137,
+      "packet_size_stddev": 257.1127230230009,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 34,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 9.11156581910317,
+      "avg_throughput_bps": 1023189377.7559235,
+      "packet_loss_rate": 0.0001179691892439021,
+      "congestion_window": 10,
+      "avg_packet_size": 1431,
+      "packet_size_stddev": 135.0721488335638,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 35,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.90666857065868,
+      "avg_throughput_bps": 920179110.4347451,
+      "packet_loss_rate": 0.00010275765528875298,
+      "congestion_window": 10,
+      "avg_packet_size": 1057,
+      "packet_size_stddev": 140.8278868260589,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 36,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 9.4615653702329,
+      "avg_throughput_bps": 1003519829.4267926,
+      "packet_loss_rate": 0.00011162503607488761,
+      "congestion_window": 10,
+      "avg_packet_size": 1118,
+      "packet_size_stddev": 103.10161143704566,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 37,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 9.981763476722179,
+      "avg_throughput_bps": 1044814874.7771902,
+      "packet_loss_rate": 8.95030048060883e-05,
+      "congestion_window": 10,
+      "avg_packet_size": 916,
+      "packet_size_stddev": 286.7236210152763,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 38,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 9.985610339297983,
+      "avg_throughput_bps": 928455689.5773803,
+      "packet_loss_rate": 9.01861050893829e-05,
+      "congestion_window": 10,
+      "avg_packet_size": 1002,
+      "packet_size_stddev": 161.43501926010174,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 39,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 9.61174213205213,
+      "avg_throughput_bps": 1081836318.5913374,
+      "packet_loss_rate": 9.310442071729638e-05,
+      "congestion_window": 10,
+      "avg_packet_size": 1270,
+      "packet_size_stddev": 223.37881659391456,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 40,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.54707315118094,
+      "avg_throughput_bps": 1064527272.5971562,
+      "packet_loss_rate": 8.924824327492845e-05,
+      "congestion_window": 10,
+      "avg_packet_size": 1457,
+      "packet_size_stddev": 293.04921207081566,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 41,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 9.58568912242402,
+      "avg_throughput_bps": 1074194482.7145622,
+      "packet_loss_rate": 8.278471244112354e-05,
+      "congestion_window": 10,
+      "avg_packet_size": 1229,
+      "packet_size_stddev": 246.13227040925528,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 42,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 9.766122237053702,
+      "avg_throughput_bps": 1086320906.914209,
+      "packet_loss_rate": 0.00010466744642187949,
+      "congestion_window": 10,
+      "avg_packet_size": 933,
+      "packet_size_stddev": 260.878337839134,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 43,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.550135039378084,
+      "avg_throughput_bps": 948737613.7693387,
+      "packet_loss_rate": 8.751510873370665e-05,
+      "congestion_window": 10,
+      "avg_packet_size": 1479,
+      "packet_size_stddev": 144.3175455284096,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 44,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.917188669296614,
+      "avg_throughput_bps": 1088270919.2813666,
+      "packet_loss_rate": 8.034695274235514e-05,
+      "congestion_window": 10,
+      "avg_packet_size": 970,
+      "packet_size_stddev": 286.15579537384326,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 45,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 9.237563100604667,
+      "avg_throughput_bps": 996302918.2832432,
+      "packet_loss_rate": 9.586587569513277e-05,
+      "congestion_window": 10,
+      "avg_packet_size": 1361,
+      "packet_size_stddev": 172.4359225999728,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 46,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.985463765922896,
+      "avg_throughput_bps": 957817484.2245535,
+      "packet_loss_rate": 0.00011043227938869744,
+      "congestion_window": 10,
+      "avg_packet_size": 1102,
+      "packet_size_stddev": 253.18800579241127,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 47,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.609839974052736,
+      "avg_throughput_bps": 999218171.4181285,
+      "packet_loss_rate": 9.04338268595778e-05,
+      "congestion_window": 10,
+      "avg_packet_size": 905,
+      "packet_size_stddev": 183.75793778095073,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 48,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.580939307257582,
+      "avg_throughput_bps": 1011121608.5806566,
+      "packet_loss_rate": 0.00010726328181879215,
+      "congestion_window": 10,
+      "avg_packet_size": 1033,
+      "packet_size_stddev": 283.64468591893865,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1500
+  },
+  {
+    "iteration": 49,
+    "scenario": "ethernet",
+    "features": {
+      "avg_rtt_ms": 10.878229569170909,
+      "avg_throughput_bps": 908568088.9737387,
+      "packet_loss_rate": 0.00010948515726308397,
+      "congestion_window": 10,
+      "avg_packet_size": 1592,
+      "packet_size_stddev": 242.64381338685578,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1600
+  },
+  {
+    "iteration": 0,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 29.027487441920968,
+      "avg_throughput_bps": 45081311.2171257,
+      "packet_loss_rate": 0.011555369452102521,
+      "congestion_window": 10,
+      "avg_packet_size": 969,
+      "packet_size_stddev": 237.0658901144864,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 1,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 29.178526287614392,
+      "avg_throughput_bps": 48255485.03901931,
+      "packet_loss_rate": 0.011488157602214936,
+      "congestion_window": 10,
+      "avg_packet_size": 1595,
+      "packet_size_stddev": 267.7216865448504,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 2,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 30.81795288194632,
+      "avg_throughput_bps": 47102874.273731746,
+      "packet_loss_rate": 0.011299379201083816,
+      "congestion_window": 10,
+      "avg_packet_size": 1562,
+      "packet_size_stddev": 273.6701434055341,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 3,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 28.524718228943335,
+      "avg_throughput_bps": 48697227.254811,
+      "packet_loss_rate": 0.01019996267714046,
+      "congestion_window": 10,
+      "avg_packet_size": 1258,
+      "packet_size_stddev": 139.70959727799337,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 4,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 31.69886288509155,
+      "avg_throughput_bps": 53525103.43550108,
+      "packet_loss_rate": 0.01022965912658989,
+      "congestion_window": 10,
+      "avg_packet_size": 1248,
+      "packet_size_stddev": 247.81785479692948,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 5,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 32.57845197887035,
+      "avg_throughput_bps": 48718041.91943286,
+      "packet_loss_rate": 0.01000537626386509,
+      "congestion_window": 10,
+      "avg_packet_size": 1014,
+      "packet_size_stddev": 116.42896469087171,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 6,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 28.702602830234202,
+      "avg_throughput_bps": 53080613.527346164,
+      "packet_loss_rate": 0.00868811283793786,
+      "congestion_window": 10,
+      "avg_packet_size": 1133,
+      "packet_size_stddev": 216.53462328723185,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 7,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 31.6857876588066,
+      "avg_throughput_bps": 50331651.584235325,
+      "packet_loss_rate": 0.009238289011607932,
+      "congestion_window": 10,
+      "avg_packet_size": 1021,
+      "packet_size_stddev": 218.11705858829708,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 8,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 29.849094830800798,
+      "avg_throughput_bps": 49371012.529045366,
+      "packet_loss_rate": 0.011158390335997068,
+      "congestion_window": 10,
+      "avg_packet_size": 930,
+      "packet_size_stddev": 131.29153401921928,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 9,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 30.71465106939061,
+      "avg_throughput_bps": 51981500.59526916,
+      "packet_loss_rate": 0.009447922533605662,
+      "congestion_window": 10,
+      "avg_packet_size": 1163,
+      "packet_size_stddev": 188.98199415384323,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 10,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 32.1132417312045,
+      "avg_throughput_bps": 46879992.73284644,
+      "packet_loss_rate": 0.010964305495893922,
+      "congestion_window": 10,
+      "avg_packet_size": 1368,
+      "packet_size_stddev": 226.14724659093102,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 11,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 32.259274950995334,
+      "avg_throughput_bps": 51855090.6450848,
+      "packet_loss_rate": 0.01006784681081292,
+      "congestion_window": 10,
+      "avg_packet_size": 1198,
+      "packet_size_stddev": 143.75390358577064,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 12,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 32.08114974759445,
+      "avg_throughput_bps": 53233724.352469355,
+      "packet_loss_rate": 0.011620135747028953,
+      "congestion_window": 10,
+      "avg_packet_size": 1338,
+      "packet_size_stddev": 203.9688979863796,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 13,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 28.16332918423496,
+      "avg_throughput_bps": 50780063.50304864,
+      "packet_loss_rate": 0.008786822525783762,
+      "congestion_window": 10,
+      "avg_packet_size": 871,
+      "packet_size_stddev": 225.35391046124744,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 14,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 28.149247283117074,
+      "avg_throughput_bps": 51327144.377999336,
+      "packet_loss_rate": 0.010211010433303509,
+      "congestion_window": 10,
+      "avg_packet_size": 1231,
+      "packet_size_stddev": 225.0969919300066,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 15,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 28.740740350817408,
+      "avg_throughput_bps": 47054638.89259337,
+      "packet_loss_rate": 0.010230308138380686,
+      "congestion_window": 10,
+      "avg_packet_size": 1047,
+      "packet_size_stddev": 287.8781720029292,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 16,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 29.048074251147217,
+      "avg_throughput_bps": 51215019.68837316,
+      "packet_loss_rate": 0.008652298694942408,
+      "congestion_window": 10,
+      "avg_packet_size": 1147,
+      "packet_size_stddev": 245.1070838367782,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 17,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 28.732985170778953,
+      "avg_throughput_bps": 54105540.56827594,
+      "packet_loss_rate": 0.008624657496909193,
+      "congestion_window": 10,
+      "avg_packet_size": 1359,
+      "packet_size_stddev": 173.71718294520764,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 18,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 27.503106428923104,
+      "avg_throughput_bps": 46024892.92602299,
+      "packet_loss_rate": 0.011311441060007216,
+      "congestion_window": 10,
+      "avg_packet_size": 1542,
+      "packet_size_stddev": 281.1526106591833,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 19,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 31.95286305500548,
+      "avg_throughput_bps": 47638726.51356716,
+      "packet_loss_rate": 0.011218588724859849,
+      "congestion_window": 10,
+      "avg_packet_size": 1277,
+      "packet_size_stddev": 150.51406422013227,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 20,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 28.971575393608553,
+      "avg_throughput_bps": 51811876.35449004,
+      "packet_loss_rate": 0.010499562339797411,
+      "congestion_window": 10,
+      "avg_packet_size": 1278,
+      "packet_size_stddev": 247.0935052056111,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 21,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 27.40288554419702,
+      "avg_throughput_bps": 45242968.08083804,
+      "packet_loss_rate": 0.008073485073621597,
+      "congestion_window": 10,
+      "avg_packet_size": 1029,
+      "packet_size_stddev": 174.83693676075734,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 22,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 28.571719066316856,
+      "avg_throughput_bps": 46521262.35837587,
+      "packet_loss_rate": 0.010258232627185575,
+      "congestion_window": 10,
+      "avg_packet_size": 1097,
+      "packet_size_stddev": 248.71094685445473,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 23,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 29.3708762294013,
+      "avg_throughput_bps": 46306025.34516552,
+      "packet_loss_rate": 0.009692735872689663,
+      "congestion_window": 10,
+      "avg_packet_size": 1265,
+      "packet_size_stddev": 149.83006057621853,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 24,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 29.18897416393864,
+      "avg_throughput_bps": 47160834.7131232,
+      "packet_loss_rate": 0.00884287466512623,
+      "congestion_window": 10,
+      "avg_packet_size": 1264,
+      "packet_size_stddev": 227.57397900490048,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 25,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 29.91723930314208,
+      "avg_throughput_bps": 50715673.48614534,
+      "packet_loss_rate": 0.010214614380141663,
+      "congestion_window": 10,
+      "avg_packet_size": 1463,
+      "packet_size_stddev": 112.7018501679079,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 26,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 32.274707796115706,
+      "avg_throughput_bps": 50296451.40110752,
+      "packet_loss_rate": 0.008798153320136406,
+      "congestion_window": 10,
+      "avg_packet_size": 987,
+      "packet_size_stddev": 161.15344371544927,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 27,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 30.862648753648575,
+      "avg_throughput_bps": 52817435.01543137,
+      "packet_loss_rate": 0.010058282146599276,
+      "congestion_window": 10,
+      "avg_packet_size": 1146,
+      "packet_size_stddev": 242.9357929863282,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 28,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 27.86420527187958,
+      "avg_throughput_bps": 46298474.66506033,
+      "packet_loss_rate": 0.00821821348202873,
+      "congestion_window": 10,
+      "avg_packet_size": 1021,
+      "packet_size_stddev": 268.62580478222515,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 29,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 29.424801934168126,
+      "avg_throughput_bps": 48055813.52562645,
+      "packet_loss_rate": 0.011895710201390786,
+      "congestion_window": 10,
+      "avg_packet_size": 1587,
+      "packet_size_stddev": 146.66366430573675,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 30,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 30.191510695722577,
+      "avg_throughput_bps": 53629533.779295824,
+      "packet_loss_rate": 0.010239949176260381,
+      "congestion_window": 10,
+      "avg_packet_size": 1534,
+      "packet_size_stddev": 212.6515952963902,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 31,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 30.218987321043564,
+      "avg_throughput_bps": 51350041.55464093,
+      "packet_loss_rate": 0.010974677245274326,
+      "congestion_window": 10,
+      "avg_packet_size": 1330,
+      "packet_size_stddev": 242.0534479316061,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 32,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 29.559154913190277,
+      "avg_throughput_bps": 50564359.111284465,
+      "packet_loss_rate": 0.010178022600773438,
+      "congestion_window": 10,
+      "avg_packet_size": 819,
+      "packet_size_stddev": 243.5214685338533,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 33,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 27.78466547270755,
+      "avg_throughput_bps": 50362449.834095426,
+      "packet_loss_rate": 0.010113752365484834,
+      "congestion_window": 10,
+      "avg_packet_size": 1451,
+      "packet_size_stddev": 297.59602963016084,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 34,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 30.112023494717373,
+      "avg_throughput_bps": 49574877.90367555,
+      "packet_loss_rate": 0.008063822225240755,
+      "congestion_window": 10,
+      "avg_packet_size": 1362,
+      "packet_size_stddev": 187.10297461139302,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 35,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 27.8958542464995,
+      "avg_throughput_bps": 48833493.19291471,
+      "packet_loss_rate": 0.008692898895953581,
+      "congestion_window": 10,
+      "avg_packet_size": 1476,
+      "packet_size_stddev": 248.9406425351135,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1400
+  },
+  {
+    "iteration": 36,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 32.0518573757738,
+      "avg_throughput_bps": 52674007.65012835,
+      "packet_loss_rate": 0.009153640375066949,
+      "congestion_window": 10,
+      "avg_packet_size": 1178,
+      "packet_size_stddev": 275.64021610817497,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 37,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 28.74305348453488,
+      "avg_throughput_bps": 48179879.74066492,
+      "packet_loss_rate": 0.011864435256130994,
+      "congestion_window": 10,
+      "avg_packet_size": 1206,
+      "packet_size_stddev": 200.65680558620073,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 38,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 27.87256934755925,
+      "avg_throughput_bps": 45888590.00432933,
+      "packet_loss_rate": 0.009273906344617605,
+      "congestion_window": 10,
+      "avg_packet_size": 1192,
+      "packet_size_stddev": 230.72898015947993,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 39,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 28.985235619345616,
+      "avg_throughput_bps": 50131941.47902112,
+      "packet_loss_rate": 0.010179588194764073,
+      "congestion_window": 10,
+      "avg_packet_size": 1371,
+      "packet_size_stddev": 240.31568741078618,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 40,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 30.434851130956325,
+      "avg_throughput_bps": 46670659.589664936,
+      "packet_loss_rate": 0.010448934223575268,
+      "congestion_window": 10,
+      "avg_packet_size": 1124,
+      "packet_size_stddev": 242.7071665965858,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 41,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 32.376666309722665,
+      "avg_throughput_bps": 53926980.142089665,
+      "packet_loss_rate": 0.008704492853245389,
+      "congestion_window": 10,
+      "avg_packet_size": 886,
+      "packet_size_stddev": 237.04698194537158,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 42,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 31.748374571045627,
+      "avg_throughput_bps": 53229368.18998283,
+      "packet_loss_rate": 0.008057321399484195,
+      "congestion_window": 10,
+      "avg_packet_size": 943,
+      "packet_size_stddev": 154.13842729764437,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 43,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 30.974421135376577,
+      "avg_throughput_bps": 54453756.794129014,
+      "packet_loss_rate": 0.01151660523876151,
+      "congestion_window": 10,
+      "avg_packet_size": 1461,
+      "packet_size_stddev": 284.345783449195,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 44,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 32.56682891211416,
+      "avg_throughput_bps": 51547333.41370027,
+      "packet_loss_rate": 0.009211281870701528,
+      "congestion_window": 10,
+      "avg_packet_size": 1348,
+      "packet_size_stddev": 140.31375935637868,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 45,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 32.01904395778163,
+      "avg_throughput_bps": 51675856.62164034,
+      "packet_loss_rate": 0.010253823751769085,
+      "congestion_window": 10,
+      "avg_packet_size": 1124,
+      "packet_size_stddev": 147.9689936559718,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 46,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 32.689146915913426,
+      "avg_throughput_bps": 47522378.590573035,
+      "packet_loss_rate": 0.009883373477136484,
+      "congestion_window": 10,
+      "avg_packet_size": 1512,
+      "packet_size_stddev": 238.5973567534017,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1400
+  },
+  {
+    "iteration": 47,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 30.207093675133688,
+      "avg_throughput_bps": 53709608.22177046,
+      "packet_loss_rate": 0.010238604595703318,
+      "congestion_window": 10,
+      "avg_packet_size": 1448,
+      "packet_size_stddev": 218.73306235815522,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 48,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 27.908306097820784,
+      "avg_throughput_bps": 53961363.16893786,
+      "packet_loss_rate": 0.009979293375087165,
+      "congestion_window": 10,
+      "avg_packet_size": 1537,
+      "packet_size_stddev": 163.65301624451544,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1400
+  },
+  {
+    "iteration": 49,
+    "scenario": "wifi",
+    "features": {
+      "avg_rtt_ms": 29.193866374397665,
+      "avg_throughput_bps": 52138427.431545384,
+      "packet_loss_rate": 0.011049835749027348,
+      "congestion_window": 10,
+      "avg_packet_size": 906,
+      "packet_size_stddev": 141.1418181780588,
+      "network_type": 2,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 0,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 78.66914862875763,
+      "avg_throughput_bps": 10854854.378532646,
+      "packet_loss_rate": 0.028615530066530333,
+      "congestion_window": 10,
+      "avg_packet_size": 1111,
+      "packet_size_stddev": 181.73318790784745,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 1,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 76.20325019957626,
+      "avg_throughput_bps": 12601690.359318262,
+      "packet_loss_rate": 0.028367463900336953,
+      "congestion_window": 10,
+      "avg_packet_size": 1573,
+      "packet_size_stddev": 131.95446045997278,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 2,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 87.81692982851712,
+      "avg_throughput_bps": 11140705.199618014,
+      "packet_loss_rate": 0.02655400114620288,
+      "congestion_window": 10,
+      "avg_packet_size": 1302,
+      "packet_size_stddev": 175.7359985798872,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 3,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 77.78682416836766,
+      "avg_throughput_bps": 11970939.463518327,
+      "packet_loss_rate": 0.028853743016199456,
+      "congestion_window": 10,
+      "avg_packet_size": 1572,
+      "packet_size_stddev": 259.9490306683433,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 4,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 75.9660191967718,
+      "avg_throughput_bps": 11654650.585482944,
+      "packet_loss_rate": 0.03532955889222517,
+      "congestion_window": 10,
+      "avg_packet_size": 1371,
+      "packet_size_stddev": 283.55662128925286,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 5,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 81.54424400679659,
+      "avg_throughput_bps": 12134082.218482815,
+      "packet_loss_rate": 0.0342091450494182,
+      "congestion_window": 10,
+      "avg_packet_size": 1051,
+      "packet_size_stddev": 153.20884884048482,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 6,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 73.02001813999024,
+      "avg_throughput_bps": 11686924.598346176,
+      "packet_loss_rate": 0.029963715964786808,
+      "congestion_window": 10,
+      "avg_packet_size": 1047,
+      "packet_size_stddev": 150.15126162885025,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 7,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 86.19770681425506,
+      "avg_throughput_bps": 11933406.206888938,
+      "packet_loss_rate": 0.02996388621205328,
+      "congestion_window": 10,
+      "avg_packet_size": 879,
+      "packet_size_stddev": 138.76810706164162,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 8,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 85.50065172190834,
+      "avg_throughput_bps": 12212692.451419972,
+      "packet_loss_rate": 0.027684863476107484,
+      "congestion_window": 10,
+      "avg_packet_size": 878,
+      "packet_size_stddev": 162.68089429390932,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 9,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 81.06824985958383,
+      "avg_throughput_bps": 13065406.3809962,
+      "packet_loss_rate": 0.032006220588293076,
+      "congestion_window": 10,
+      "avg_packet_size": 1234,
+      "packet_size_stddev": 203.2100404932625,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 10,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 77.43269334255616,
+      "avg_throughput_bps": 12374215.185440578,
+      "packet_loss_rate": 0.031790072780961555,
+      "congestion_window": 10,
+      "avg_packet_size": 1104,
+      "packet_size_stddev": 158.71997889392975,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 11,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 82.34960063532098,
+      "avg_throughput_bps": 12872562.296050146,
+      "packet_loss_rate": 0.03545422855162233,
+      "congestion_window": 10,
+      "avg_packet_size": 1037,
+      "packet_size_stddev": 128.9242613574453,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 12,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 83.3137804692359,
+      "avg_throughput_bps": 12401383.104211047,
+      "packet_loss_rate": 0.027205864111858883,
+      "congestion_window": 10,
+      "avg_packet_size": 912,
+      "packet_size_stddev": 256.545072039213,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 13,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 78.6712995403064,
+      "avg_throughput_bps": 10893068.159518266,
+      "packet_loss_rate": 0.03377073309456498,
+      "congestion_window": 10,
+      "avg_packet_size": 1569,
+      "packet_size_stddev": 243.33213159197655,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 14,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 79.42760662711042,
+      "avg_throughput_bps": 13178469.347180452,
+      "packet_loss_rate": 0.025041202309331545,
+      "congestion_window": 10,
+      "avg_packet_size": 1085,
+      "packet_size_stddev": 178.4282703050689,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 15,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 83.04322304996839,
+      "avg_throughput_bps": 11570002.162907062,
+      "packet_loss_rate": 0.03198904621656494,
+      "congestion_window": 10,
+      "avg_packet_size": 1409,
+      "packet_size_stddev": 215.7918828459481,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 16,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 86.23248713845945,
+      "avg_throughput_bps": 11883954.450902727,
+      "packet_loss_rate": 0.02452892935126687,
+      "congestion_window": 10,
+      "avg_packet_size": 814,
+      "packet_size_stddev": 174.71316187247507,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 17,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 85.51635892971714,
+      "avg_throughput_bps": 11932635.530833945,
+      "packet_loss_rate": 0.033339342042530654,
+      "congestion_window": 10,
+      "avg_packet_size": 1288,
+      "packet_size_stddev": 121.18199832672772,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 18,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 77.8047437733511,
+      "avg_throughput_bps": 11652126.101139208,
+      "packet_loss_rate": 0.024857749291656316,
+      "congestion_window": 10,
+      "avg_packet_size": 1213,
+      "packet_size_stddev": 139.92823832107575,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 19,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 82.7911215985096,
+      "avg_throughput_bps": 10842114.726780577,
+      "packet_loss_rate": 0.03294374249771555,
+      "congestion_window": 10,
+      "avg_packet_size": 932,
+      "packet_size_stddev": 259.81050423964837,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 20,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 74.37222689370802,
+      "avg_throughput_bps": 12647345.960139945,
+      "packet_loss_rate": 0.030521600607095932,
+      "congestion_window": 10,
+      "avg_packet_size": 1483,
+      "packet_size_stddev": 146.59335897061186,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 21,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 75.49438810199052,
+      "avg_throughput_bps": 11876021.70918637,
+      "packet_loss_rate": 0.02708226329356763,
+      "congestion_window": 10,
+      "avg_packet_size": 1383,
+      "packet_size_stddev": 103.94902084361127,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 22,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 74.30652805091822,
+      "avg_throughput_bps": 10888236.795419188,
+      "packet_loss_rate": 0.027358453161508655,
+      "congestion_window": 10,
+      "avg_packet_size": 842,
+      "packet_size_stddev": 120.39594159932767,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 23,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 73.14324932361808,
+      "avg_throughput_bps": 12383819.863711528,
+      "packet_loss_rate": 0.033133005615351874,
+      "congestion_window": 10,
+      "avg_packet_size": 1020,
+      "packet_size_stddev": 206.82409736700578,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 24,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 78.85537507293746,
+      "avg_throughput_bps": 12572877.440395609,
+      "packet_loss_rate": 0.02781777908508331,
+      "congestion_window": 10,
+      "avg_packet_size": 1288,
+      "packet_size_stddev": 104.03880852586936,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 25,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 72.85680807674925,
+      "avg_throughput_bps": 11296607.413247926,
+      "packet_loss_rate": 0.033077280512931406,
+      "congestion_window": 10,
+      "avg_packet_size": 1214,
+      "packet_size_stddev": 249.71923797268275,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 26,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 81.87158349983355,
+      "avg_throughput_bps": 11381134.013830103,
+      "packet_loss_rate": 0.03568044681005478,
+      "congestion_window": 10,
+      "avg_packet_size": 1478,
+      "packet_size_stddev": 155.73508012442244,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 27,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 77.76519210567602,
+      "avg_throughput_bps": 10824213.886623515,
+      "packet_loss_rate": 0.034603305607647475,
+      "congestion_window": 10,
+      "avg_packet_size": 872,
+      "packet_size_stddev": 187.5978909871058,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 28,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 79.60145973167147,
+      "avg_throughput_bps": 12486064.976509333,
+      "packet_loss_rate": 0.02448932547535091,
+      "congestion_window": 10,
+      "avg_packet_size": 1352,
+      "packet_size_stddev": 120.44347755457876,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 29,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 79.24193607495855,
+      "avg_throughput_bps": 12365661.56431148,
+      "packet_loss_rate": 0.028679967014956866,
+      "congestion_window": 10,
+      "avg_packet_size": 1392,
+      "packet_size_stddev": 141.95128861225777,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 30,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 85.3464633322616,
+      "avg_throughput_bps": 11755441.014174232,
+      "packet_loss_rate": 0.02976479314394406,
+      "congestion_window": 10,
+      "avg_packet_size": 1267,
+      "packet_size_stddev": 198.02715399971717,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 31,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 75.8802504953746,
+      "avg_throughput_bps": 11454747.20968214,
+      "packet_loss_rate": 0.024807395978273392,
+      "congestion_window": 10,
+      "avg_packet_size": 1141,
+      "packet_size_stddev": 242.47234187811605,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 32,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 87.29611951872165,
+      "avg_throughput_bps": 11244560.110061297,
+      "packet_loss_rate": 0.026014137083715437,
+      "congestion_window": 10,
+      "avg_packet_size": 1335,
+      "packet_size_stddev": 231.0689136504509,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 33,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 85.81910699847984,
+      "avg_throughput_bps": 12406928.621386081,
+      "packet_loss_rate": 0.02610407746957456,
+      "congestion_window": 10,
+      "avg_packet_size": 887,
+      "packet_size_stddev": 220.49296223186576,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 34,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 76.09725314965657,
+      "avg_throughput_bps": 11345959.476067847,
+      "packet_loss_rate": 0.033482094231692565,
+      "congestion_window": 10,
+      "avg_packet_size": 1132,
+      "packet_size_stddev": 228.25310660352864,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 35,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 74.27631981455096,
+      "avg_throughput_bps": 13035248.804474434,
+      "packet_loss_rate": 0.02861914013022899,
+      "congestion_window": 10,
+      "avg_packet_size": 946,
+      "packet_size_stddev": 207.38883623581413,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 36,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 78.39821128928354,
+      "avg_throughput_bps": 12234044.46649986,
+      "packet_loss_rate": 0.03413386948454558,
+      "congestion_window": 10,
+      "avg_packet_size": 1426,
+      "packet_size_stddev": 117.04848557685756,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 37,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 77.52435196201164,
+      "avg_throughput_bps": 12642825.270667907,
+      "packet_loss_rate": 0.027333893165512303,
+      "congestion_window": 10,
+      "avg_packet_size": 839,
+      "packet_size_stddev": 205.2989041061071,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 38,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 79.07524149145243,
+      "avg_throughput_bps": 12706682.68656766,
+      "packet_loss_rate": 0.02534484124115749,
+      "congestion_window": 10,
+      "avg_packet_size": 1053,
+      "packet_size_stddev": 104.98612691161529,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 39,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 72.84267511961586,
+      "avg_throughput_bps": 11507241.67515997,
+      "packet_loss_rate": 0.025238708688431182,
+      "congestion_window": 10,
+      "avg_packet_size": 1471,
+      "packet_size_stddev": 275.74725525586985,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 40,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 85.67572678861517,
+      "avg_throughput_bps": 11236215.457614696,
+      "packet_loss_rate": 0.025508914783872304,
+      "congestion_window": 10,
+      "avg_packet_size": 960,
+      "packet_size_stddev": 187.41603042284632,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 41,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 80.04118306827456,
+      "avg_throughput_bps": 12481495.631198572,
+      "packet_loss_rate": 0.028806868162497126,
+      "congestion_window": 10,
+      "avg_packet_size": 1234,
+      "packet_size_stddev": 148.86185475815896,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 42,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 73.79339438620245,
+      "avg_throughput_bps": 10971732.26913335,
+      "packet_loss_rate": 0.0283599857741818,
+      "congestion_window": 10,
+      "avg_packet_size": 1366,
+      "packet_size_stddev": 109.86233127526792,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 43,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 85.94635973599583,
+      "avg_throughput_bps": 12905796.828518666,
+      "packet_loss_rate": 0.027291663972774147,
+      "congestion_window": 10,
+      "avg_packet_size": 1562,
+      "packet_size_stddev": 157.51271718919855,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 44,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 81.13363451250008,
+      "avg_throughput_bps": 11564078.545328625,
+      "packet_loss_rate": 0.030548312850045826,
+      "congestion_window": 10,
+      "avg_packet_size": 896,
+      "packet_size_stddev": 125.58014505858677,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 45,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 81.1157347351567,
+      "avg_throughput_bps": 13136424.094106233,
+      "packet_loss_rate": 0.033095343384912296,
+      "congestion_window": 10,
+      "avg_packet_size": 1358,
+      "packet_size_stddev": 117.81908348598193,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 46,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 72.29429444265455,
+      "avg_throughput_bps": 12785395.933036296,
+      "packet_loss_rate": 0.028904227270796622,
+      "congestion_window": 10,
+      "avg_packet_size": 940,
+      "packet_size_stddev": 136.48218730804234,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 47,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 75.09769450969753,
+      "avg_throughput_bps": 10841136.431290006,
+      "packet_loss_rate": 0.029271799209242652,
+      "congestion_window": 10,
+      "avg_packet_size": 923,
+      "packet_size_stddev": 297.24540629139676,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 48,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 86.2813193891063,
+      "avg_throughput_bps": 12000924.603360914,
+      "packet_loss_rate": 0.026804460620241277,
+      "congestion_window": 10,
+      "avg_packet_size": 906,
+      "packet_size_stddev": 266.0970205785743,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 49,
+    "scenario": "4g",
+    "features": {
+      "avg_rtt_ms": 87.59438457018463,
+      "avg_throughput_bps": 10987318.499520019,
+      "packet_loss_rate": 0.026823794057896092,
+      "congestion_window": 10,
+      "avg_packet_size": 1348,
+      "packet_size_stddev": 261.92670388918657,
+      "network_type": 3,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 0,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 209.4986408161124,
+      "avg_throughput_bps": 9537377.087260747,
+      "packet_loss_rate": 0.041441622382154014,
+      "congestion_window": 10,
+      "avg_packet_size": 1125,
+      "packet_size_stddev": 111.00926514342224,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 1,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 180.05386784321234,
+      "avg_throughput_bps": 9242229.062112002,
+      "packet_loss_rate": 0.04356607288471,
+      "congestion_window": 10,
+      "avg_packet_size": 1519,
+      "packet_size_stddev": 132.3527079199137,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 2,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 216.97717222732348,
+      "avg_throughput_bps": 9298981.31091872,
+      "packet_loss_rate": 0.04026862689002403,
+      "congestion_window": 10,
+      "avg_packet_size": 920,
+      "packet_size_stddev": 209.33938986643992,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 3,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 208.88907594543497,
+      "avg_throughput_bps": 9218533.52545522,
+      "packet_loss_rate": 0.04166731500613028,
+      "congestion_window": 10,
+      "avg_packet_size": 820,
+      "packet_size_stddev": 274.3018476327642,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 4,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 207.82806709978166,
+      "avg_throughput_bps": 9727696.166221052,
+      "packet_loss_rate": 0.04954243959991533,
+      "congestion_window": 10,
+      "avg_packet_size": 894,
+      "packet_size_stddev": 266.4857913079103,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 5,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 218.72299720667198,
+      "avg_throughput_bps": 9257637.922556398,
+      "packet_loss_rate": 0.04246991463936336,
+      "congestion_window": 10,
+      "avg_packet_size": 1477,
+      "packet_size_stddev": 247.9456346952575,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 6,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 213.07551777044856,
+      "avg_throughput_bps": 10411755.056683237,
+      "packet_loss_rate": 0.04226142633745744,
+      "congestion_window": 10,
+      "avg_packet_size": 1320,
+      "packet_size_stddev": 154.53357190566027,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 7,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 216.7199872327327,
+      "avg_throughput_bps": 9401974.743054377,
+      "packet_loss_rate": 0.04868525544308055,
+      "congestion_window": 10,
+      "avg_packet_size": 1372,
+      "packet_size_stddev": 163.7562958328662,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 8,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 192.52563680844708,
+      "avg_throughput_bps": 10851587.413786639,
+      "packet_loss_rate": 0.052132163146688754,
+      "congestion_window": 10,
+      "avg_packet_size": 1014,
+      "packet_size_stddev": 232.85200091059167,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 9,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 197.19559842167732,
+      "avg_throughput_bps": 9943910.947176244,
+      "packet_loss_rate": 0.05366924762307898,
+      "congestion_window": 10,
+      "avg_packet_size": 884,
+      "packet_size_stddev": 293.33990997977253,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 10,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 212.69961013440758,
+      "avg_throughput_bps": 9135049.251148438,
+      "packet_loss_rate": 0.045550596194547766,
+      "congestion_window": 10,
+      "avg_packet_size": 1075,
+      "packet_size_stddev": 176.6983623864401,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 11,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 213.68230977555353,
+      "avg_throughput_bps": 9833555.135364171,
+      "packet_loss_rate": 0.04273968582972107,
+      "congestion_window": 10,
+      "avg_packet_size": 1218,
+      "packet_size_stddev": 259.3675690472237,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 12,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 200.59047237319433,
+      "avg_throughput_bps": 10071383.001595864,
+      "packet_loss_rate": 0.058803934237722635,
+      "congestion_window": 10,
+      "avg_packet_size": 1173,
+      "packet_size_stddev": 183.55201481218668,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 13,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 200.60723758587736,
+      "avg_throughput_bps": 10187061.532111539,
+      "packet_loss_rate": 0.04984080722482495,
+      "congestion_window": 10,
+      "avg_packet_size": 914,
+      "packet_size_stddev": 192.72632543515687,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 14,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 207.2780184972121,
+      "avg_throughput_bps": 10969710.424083384,
+      "packet_loss_rate": 0.059236840781472413,
+      "congestion_window": 10,
+      "avg_packet_size": 927,
+      "packet_size_stddev": 116.92452232236201,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 15,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 188.5119828498452,
+      "avg_throughput_bps": 9060835.71700026,
+      "packet_loss_rate": 0.052280064632125534,
+      "congestion_window": 10,
+      "avg_packet_size": 1147,
+      "packet_size_stddev": 286.67900829304403,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 16,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 200.14080491393705,
+      "avg_throughput_bps": 10073028.880906785,
+      "packet_loss_rate": 0.04149010759220012,
+      "congestion_window": 10,
+      "avg_packet_size": 860,
+      "packet_size_stddev": 128.44561970694767,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 17,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 215.1407866644041,
+      "avg_throughput_bps": 9339676.581608802,
+      "packet_loss_rate": 0.05041402858797161,
+      "congestion_window": 10,
+      "avg_packet_size": 1574,
+      "packet_size_stddev": 287.98937994591006,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 18,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 214.18745847898998,
+      "avg_throughput_bps": 10666278.615021162,
+      "packet_loss_rate": 0.04697213113197277,
+      "congestion_window": 10,
+      "avg_packet_size": 1508,
+      "packet_size_stddev": 190.13109273801354,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 19,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 202.0985366795924,
+      "avg_throughput_bps": 10369555.879623255,
+      "packet_loss_rate": 0.05359585917386642,
+      "congestion_window": 10,
+      "avg_packet_size": 1060,
+      "packet_size_stddev": 265.6263278242418,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 20,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 217.24038746555735,
+      "avg_throughput_bps": 9214406.90616564,
+      "packet_loss_rate": 0.05980577327720565,
+      "congestion_window": 10,
+      "avg_packet_size": 981,
+      "packet_size_stddev": 129.48169950552872,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 21,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 183.06350983219997,
+      "avg_throughput_bps": 10776645.359916292,
+      "packet_loss_rate": 0.056922042910266014,
+      "congestion_window": 10,
+      "avg_packet_size": 1006,
+      "packet_size_stddev": 128.1373939180078,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 22,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 204.17475091762532,
+      "avg_throughput_bps": 9888450.917819364,
+      "packet_loss_rate": 0.0527653516088335,
+      "congestion_window": 10,
+      "avg_packet_size": 1517,
+      "packet_size_stddev": 200.04759772660702,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 23,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 205.7021842703445,
+      "avg_throughput_bps": 9194115.513087641,
+      "packet_loss_rate": 0.043806580994643976,
+      "congestion_window": 10,
+      "avg_packet_size": 1101,
+      "packet_size_stddev": 209.05338577886175,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 24,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 190.8447019957529,
+      "avg_throughput_bps": 10210206.261168104,
+      "packet_loss_rate": 0.05363978499702028,
+      "congestion_window": 10,
+      "avg_packet_size": 968,
+      "packet_size_stddev": 263.9572171225093,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 25,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 215.16534265025217,
+      "avg_throughput_bps": 10221588.260106858,
+      "packet_loss_rate": 0.04648914561445844,
+      "congestion_window": 10,
+      "avg_packet_size": 1569,
+      "packet_size_stddev": 175.3597268817698,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 26,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 206.8269886984858,
+      "avg_throughput_bps": 9131423.56597583,
+      "packet_loss_rate": 0.04998658101100042,
+      "congestion_window": 10,
+      "avg_packet_size": 1121,
+      "packet_size_stddev": 201.03098905913566,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 27,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 191.58523443599788,
+      "avg_throughput_bps": 9704496.906940155,
+      "packet_loss_rate": 0.05472979732731345,
+      "congestion_window": 10,
+      "avg_packet_size": 806,
+      "packet_size_stddev": 132.1947770002126,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 28,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 188.78953706480553,
+      "avg_throughput_bps": 9957053.733865218,
+      "packet_loss_rate": 0.056046189615238606,
+      "congestion_window": 10,
+      "avg_packet_size": 912,
+      "packet_size_stddev": 108.56303612234397,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 29,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 199.2091437422113,
+      "avg_throughput_bps": 10461238.366923835,
+      "packet_loss_rate": 0.04583280974275518,
+      "congestion_window": 10,
+      "avg_packet_size": 1204,
+      "packet_size_stddev": 235.1726989023499,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 30,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 218.74692144840537,
+      "avg_throughput_bps": 9686524.983391395,
+      "packet_loss_rate": 0.045058201969894525,
+      "congestion_window": 10,
+      "avg_packet_size": 1341,
+      "packet_size_stddev": 234.89284396214418,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 31,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 180.06728446195152,
+      "avg_throughput_bps": 10161674.932254288,
+      "packet_loss_rate": 0.04409571571598894,
+      "congestion_window": 10,
+      "avg_packet_size": 951,
+      "packet_size_stddev": 259.2153006767643,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 32,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 181.96346234820388,
+      "avg_throughput_bps": 10353946.116564801,
+      "packet_loss_rate": 0.05375417531733079,
+      "congestion_window": 10,
+      "avg_packet_size": 1087,
+      "packet_size_stddev": 115.47483504857831,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 33,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 215.00773845357148,
+      "avg_throughput_bps": 9450050.412617262,
+      "packet_loss_rate": 0.050964792771193326,
+      "congestion_window": 10,
+      "avg_packet_size": 1367,
+      "packet_size_stddev": 107.0575406852111,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 34,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 208.3890515572763,
+      "avg_throughput_bps": 9218014.935783233,
+      "packet_loss_rate": 0.04959093507178576,
+      "congestion_window": 10,
+      "avg_packet_size": 968,
+      "packet_size_stddev": 249.58999085895047,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 35,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 218.89228945780891,
+      "avg_throughput_bps": 9909526.507612316,
+      "packet_loss_rate": 0.045983791473327706,
+      "congestion_window": 10,
+      "avg_packet_size": 1374,
+      "packet_size_stddev": 203.38609525134126,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 36,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 192.97054278158362,
+      "avg_throughput_bps": 9925612.945663061,
+      "packet_loss_rate": 0.04122670433545496,
+      "congestion_window": 10,
+      "avg_packet_size": 1434,
+      "packet_size_stddev": 202.25171264739186,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 37,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 198.09645349482662,
+      "avg_throughput_bps": 10909104.594105145,
+      "packet_loss_rate": 0.05775955368721844,
+      "congestion_window": 10,
+      "avg_packet_size": 1274,
+      "packet_size_stddev": 261.8050630410661,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 38,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 219.36684408814116,
+      "avg_throughput_bps": 9577387.992427899,
+      "packet_loss_rate": 0.04238905768234833,
+      "congestion_window": 10,
+      "avg_packet_size": 1187,
+      "packet_size_stddev": 133.5809057452093,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 39,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 213.50967788673677,
+      "avg_throughput_bps": 9670566.777971318,
+      "packet_loss_rate": 0.04093506209333522,
+      "congestion_window": 10,
+      "avg_packet_size": 826,
+      "packet_size_stddev": 228.60392650672074,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 40,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 209.73612255424507,
+      "avg_throughput_bps": 9395747.202913389,
+      "packet_loss_rate": 0.059419125503029704,
+      "congestion_window": 10,
+      "avg_packet_size": 1198,
+      "packet_size_stddev": 207.33299305155953,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 41,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 204.3395471019648,
+      "avg_throughput_bps": 9670670.16025387,
+      "packet_loss_rate": 0.05357520635202167,
+      "congestion_window": 10,
+      "avg_packet_size": 947,
+      "packet_size_stddev": 224.9100976964914,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 42,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 190.26160549883966,
+      "avg_throughput_bps": 10417075.652994398,
+      "packet_loss_rate": 0.05872349824984209,
+      "congestion_window": 10,
+      "avg_packet_size": 1431,
+      "packet_size_stddev": 259.13235700860207,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 43,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 194.8201028137542,
+      "avg_throughput_bps": 10756160.160502424,
+      "packet_loss_rate": 0.04600432170321182,
+      "congestion_window": 10,
+      "avg_packet_size": 895,
+      "packet_size_stddev": 265.74144996472796,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 44,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 198.22274912224168,
+      "avg_throughput_bps": 10061506.196487451,
+      "packet_loss_rate": 0.04745661245231321,
+      "congestion_window": 10,
+      "avg_packet_size": 976,
+      "packet_size_stddev": 222.06943663405866,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1300
+  },
+  {
+    "iteration": 45,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 196.58559496011426,
+      "avg_throughput_bps": 9300291.840402748,
+      "packet_loss_rate": 0.059172638829632855,
+      "congestion_window": 10,
+      "avg_packet_size": 1172,
+      "packet_size_stddev": 236.43785743545578,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 46,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 190.6826338479918,
+      "avg_throughput_bps": 9274012.404842302,
+      "packet_loss_rate": 0.05901495337020978,
+      "congestion_window": 10,
+      "avg_packet_size": 1280,
+      "packet_size_stddev": 226.83063714820287,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 47,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 189.78865167403885,
+      "avg_throughput_bps": 10098129.261929063,
+      "packet_loss_rate": 0.05631061117843348,
+      "congestion_window": 10,
+      "avg_packet_size": 941,
+      "packet_size_stddev": 201.93616044267958,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 48,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 186.67552175566908,
+      "avg_throughput_bps": 10515472.461907413,
+      "packet_loss_rate": 0.057218384901771946,
+      "congestion_window": 10,
+      "avg_packet_size": 979,
+      "packet_size_stddev": 130.13888583770532,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 49,
+    "scenario": "congested",
+    "features": {
+      "avg_rtt_ms": 217.516536495572,
+      "avg_throughput_bps": 10214187.653565165,
+      "packet_loss_rate": 0.05461586902277038,
+      "congestion_window": 10,
+      "avg_packet_size": 1464,
+      "packet_size_stddev": 218.89830729611214,
+      "network_type": 1,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 0,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 562.5675513816135,
+      "avg_throughput_bps": 18044107.184934627,
+      "packet_loss_rate": 0.018934769759228205,
+      "congestion_window": 10,
+      "avg_packet_size": 1324,
+      "packet_size_stddev": 178.72729102638596,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 1,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 587.901855015461,
+      "avg_throughput_bps": 18030852.54694192,
+      "packet_loss_rate": 0.019774344954576573,
+      "congestion_window": 10,
+      "avg_packet_size": 1156,
+      "packet_size_stddev": 234.36945691196746,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 2,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 607.1275495357394,
+      "avg_throughput_bps": 18503072.512313012,
+      "packet_loss_rate": 0.020035399789766827,
+      "congestion_window": 10,
+      "avg_packet_size": 1377,
+      "packet_size_stddev": 295.01283906749666,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 3,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 549.1470410052196,
+      "avg_throughput_bps": 19881188.48030723,
+      "packet_loss_rate": 0.02362217065144913,
+      "congestion_window": 10,
+      "avg_packet_size": 1161,
+      "packet_size_stddev": 121.1919146835474,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 4,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 591.023114989948,
+      "avg_throughput_bps": 20308598.23376412,
+      "packet_loss_rate": 0.017562647690652515,
+      "congestion_window": 10,
+      "avg_packet_size": 1581,
+      "packet_size_stddev": 283.3119142665222,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 5,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 620.5727447287475,
+      "avg_throughput_bps": 19232078.745823942,
+      "packet_loss_rate": 0.01893537308840378,
+      "congestion_window": 10,
+      "avg_packet_size": 1514,
+      "packet_size_stddev": 284.76984012808293,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 6,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 649.4702395118671,
+      "avg_throughput_bps": 19761918.725339603,
+      "packet_loss_rate": 0.023055536874655086,
+      "congestion_window": 10,
+      "avg_packet_size": 1255,
+      "packet_size_stddev": 160.29473429861002,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 7,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 602.3193848406951,
+      "avg_throughput_bps": 18915442.39186528,
+      "packet_loss_rate": 0.017906376610101988,
+      "congestion_window": 10,
+      "avg_packet_size": 1478,
+      "packet_size_stddev": 159.04019633370956,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 8,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 563.772046055808,
+      "avg_throughput_bps": 20601697.899742167,
+      "packet_loss_rate": 0.018170298018435803,
+      "congestion_window": 10,
+      "avg_packet_size": 1599,
+      "packet_size_stddev": 239.19385107293735,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 9,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 633.1004669114692,
+      "avg_throughput_bps": 21409868.304613456,
+      "packet_loss_rate": 0.022227603585989943,
+      "congestion_window": 10,
+      "avg_packet_size": 1287,
+      "packet_size_stddev": 237.20923035867173,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 10,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 629.6922909492226,
+      "avg_throughput_bps": 19782427.76856743,
+      "packet_loss_rate": 0.019023012877737836,
+      "congestion_window": 10,
+      "avg_packet_size": 950,
+      "packet_size_stddev": 171.6589519643249,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 11,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 567.8368982187236,
+      "avg_throughput_bps": 20725889.890214097,
+      "packet_loss_rate": 0.022774478129080337,
+      "congestion_window": 10,
+      "avg_packet_size": 1378,
+      "packet_size_stddev": 225.32503797341784,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 12,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 595.1894208698266,
+      "avg_throughput_bps": 20315948.468633384,
+      "packet_loss_rate": 0.0162472284525699,
+      "congestion_window": 10,
+      "avg_packet_size": 1225,
+      "packet_size_stddev": 163.77326082573995,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 13,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 605.0327910974147,
+      "avg_throughput_bps": 20095537.42339429,
+      "packet_loss_rate": 0.01981334201077365,
+      "congestion_window": 10,
+      "avg_packet_size": 1336,
+      "packet_size_stddev": 167.09801375791437,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 14,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 566.2839749332285,
+      "avg_throughput_bps": 18934280.65719272,
+      "packet_loss_rate": 0.022431960786443286,
+      "congestion_window": 10,
+      "avg_packet_size": 1368,
+      "packet_size_stddev": 108.89294557361934,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 15,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 591.6361234851554,
+      "avg_throughput_bps": 18983633.422682945,
+      "packet_loss_rate": 0.01623632853155355,
+      "congestion_window": 10,
+      "avg_packet_size": 1012,
+      "packet_size_stddev": 248.19218372626136,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 16,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 550.8181230490436,
+      "avg_throughput_bps": 19226758.8471262,
+      "packet_loss_rate": 0.020619132740525816,
+      "congestion_window": 10,
+      "avg_packet_size": 935,
+      "packet_size_stddev": 155.33526832271457,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 17,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 580.9199522178958,
+      "avg_throughput_bps": 18258147.615318067,
+      "packet_loss_rate": 0.01649861164371543,
+      "congestion_window": 10,
+      "avg_packet_size": 1029,
+      "packet_size_stddev": 196.999628159123,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 18,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 639.7321703580031,
+      "avg_throughput_bps": 21098070.99740876,
+      "packet_loss_rate": 0.01791968903156417,
+      "congestion_window": 10,
+      "avg_packet_size": 1567,
+      "packet_size_stddev": 248.65794261075646,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 19,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 561.5684520325566,
+      "avg_throughput_bps": 21621336.568725035,
+      "packet_loss_rate": 0.023239587411000434,
+      "congestion_window": 10,
+      "avg_packet_size": 1150,
+      "packet_size_stddev": 176.79393273457012,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 20,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 566.1630309734612,
+      "avg_throughput_bps": 19395659.702158194,
+      "packet_loss_rate": 0.01887852664119424,
+      "congestion_window": 10,
+      "avg_packet_size": 1072,
+      "packet_size_stddev": 256.26088788272637,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 21,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 543.2160885574889,
+      "avg_throughput_bps": 20652732.72051654,
+      "packet_loss_rate": 0.018898987687666968,
+      "congestion_window": 10,
+      "avg_packet_size": 1210,
+      "packet_size_stddev": 238.18844755973035,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 22,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 597.9292631371065,
+      "avg_throughput_bps": 18132814.465291977,
+      "packet_loss_rate": 0.01701651148998455,
+      "congestion_window": 10,
+      "avg_packet_size": 1045,
+      "packet_size_stddev": 240.4547877239709,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 23,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 621.6662028343881,
+      "avg_throughput_bps": 18729726.782716483,
+      "packet_loss_rate": 0.019715104432789083,
+      "congestion_window": 10,
+      "avg_packet_size": 1232,
+      "packet_size_stddev": 122.19247621819132,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 24,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 558.5006024233784,
+      "avg_throughput_bps": 20647961.918384455,
+      "packet_loss_rate": 0.02160642599586014,
+      "congestion_window": 10,
+      "avg_packet_size": 881,
+      "packet_size_stddev": 255.99912569942592,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 25,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 639.2840145411919,
+      "avg_throughput_bps": 21950811.21124336,
+      "packet_loss_rate": 0.017749246230847712,
+      "congestion_window": 10,
+      "avg_packet_size": 1293,
+      "packet_size_stddev": 130.14605096164465,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 26,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 642.5528851902172,
+      "avg_throughput_bps": 20418969.20128559,
+      "packet_loss_rate": 0.02031638086872963,
+      "congestion_window": 10,
+      "avg_packet_size": 971,
+      "packet_size_stddev": 298.74992498717484,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 27,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 616.8855778389504,
+      "avg_throughput_bps": 20152562.272296857,
+      "packet_loss_rate": 0.02179980802872326,
+      "congestion_window": 10,
+      "avg_packet_size": 1176,
+      "packet_size_stddev": 273.03317189321353,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 28,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 659.3125361553981,
+      "avg_throughput_bps": 21489609.474015575,
+      "packet_loss_rate": 0.01612910641793278,
+      "congestion_window": 10,
+      "avg_packet_size": 1011,
+      "packet_size_stddev": 133.40453041550956,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 29,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 657.3029863828439,
+      "avg_throughput_bps": 19421165.939517118,
+      "packet_loss_rate": 0.02038037661740808,
+      "congestion_window": 10,
+      "avg_packet_size": 1470,
+      "packet_size_stddev": 218.78766671025954,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 30,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 575.8438284972672,
+      "avg_throughput_bps": 21947025.796460252,
+      "packet_loss_rate": 0.02133810150733081,
+      "congestion_window": 10,
+      "avg_packet_size": 1241,
+      "packet_size_stddev": 159.67461502565317,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 31,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 573.4019303246886,
+      "avg_throughput_bps": 19057268.16135213,
+      "packet_loss_rate": 0.02093789595617176,
+      "congestion_window": 10,
+      "avg_packet_size": 1163,
+      "packet_size_stddev": 209.57849492317524,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 32,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 574.4952947706788,
+      "avg_throughput_bps": 18105255.472348604,
+      "packet_loss_rate": 0.022358648260388754,
+      "congestion_window": 10,
+      "avg_packet_size": 1438,
+      "packet_size_stddev": 254.2302375171125,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 33,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 572.2129754187547,
+      "avg_throughput_bps": 20433811.956751738,
+      "packet_loss_rate": 0.021600928272733997,
+      "congestion_window": 10,
+      "avg_packet_size": 1185,
+      "packet_size_stddev": 242.29544581506696,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 34,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 600.6822975878471,
+      "avg_throughput_bps": 19150136.56399079,
+      "packet_loss_rate": 0.023124519066374374,
+      "congestion_window": 10,
+      "avg_packet_size": 866,
+      "packet_size_stddev": 264.1090293508957,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 35,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 560.5238250664836,
+      "avg_throughput_bps": 20244430.81105825,
+      "packet_loss_rate": 0.021433887258626418,
+      "congestion_window": 10,
+      "avg_packet_size": 1571,
+      "packet_size_stddev": 264.21174645210556,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 36,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 658.8716176588011,
+      "avg_throughput_bps": 18771849.82120156,
+      "packet_loss_rate": 0.02263569487557019,
+      "congestion_window": 10,
+      "avg_packet_size": 1019,
+      "packet_size_stddev": 221.71670087350557,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 37,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 607.0066600828511,
+      "avg_throughput_bps": 21816369.861971695,
+      "packet_loss_rate": 0.019943898309017567,
+      "congestion_window": 10,
+      "avg_packet_size": 1485,
+      "packet_size_stddev": 247.142868728427,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 38,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 558.0738919688825,
+      "avg_throughput_bps": 20071026.811012607,
+      "packet_loss_rate": 0.01635732604425975,
+      "congestion_window": 10,
+      "avg_packet_size": 1027,
+      "packet_size_stddev": 139.85172538475337,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 39,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 603.4808939012844,
+      "avg_throughput_bps": 18309525.684016068,
+      "packet_loss_rate": 0.016860487994062586,
+      "congestion_window": 10,
+      "avg_packet_size": 1503,
+      "packet_size_stddev": 296.52318983342815,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 40,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 575.8030434854339,
+      "avg_throughput_bps": 18357672.110390298,
+      "packet_loss_rate": 0.01723746996928771,
+      "congestion_window": 10,
+      "avg_packet_size": 993,
+      "packet_size_stddev": 231.8044781188311,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 41,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 614.3003547737312,
+      "avg_throughput_bps": 20462945.874413524,
+      "packet_loss_rate": 0.0162932864643233,
+      "congestion_window": 10,
+      "avg_packet_size": 872,
+      "packet_size_stddev": 134.5648533048449,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 42,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 623.2168719754858,
+      "avg_throughput_bps": 19993903.04665653,
+      "packet_loss_rate": 0.020792589698698873,
+      "congestion_window": 10,
+      "avg_packet_size": 1325,
+      "packet_size_stddev": 111.68130475453302,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 43,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 653.9900511690951,
+      "avg_throughput_bps": 19468776.767251063,
+      "packet_loss_rate": 0.02318037324389312,
+      "congestion_window": 10,
+      "avg_packet_size": 1101,
+      "packet_size_stddev": 102.38441717299382,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 44,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 626.9134472520819,
+      "avg_throughput_bps": 21289463.822002538,
+      "packet_loss_rate": 0.023700780141503508,
+      "congestion_window": 10,
+      "avg_packet_size": 800,
+      "packet_size_stddev": 168.5367628906884,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 45,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 612.7654291294765,
+      "avg_throughput_bps": 21375891.069174733,
+      "packet_loss_rate": 0.02194272431979701,
+      "congestion_window": 10,
+      "avg_packet_size": 1433,
+      "packet_size_stddev": 275.40231489641155,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 46,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 596.8842495284514,
+      "avg_throughput_bps": 20564004.705852706,
+      "packet_loss_rate": 0.018735077127826242,
+      "congestion_window": 10,
+      "avg_packet_size": 1373,
+      "packet_size_stddev": 215.1404680412884,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 47,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 582.0553979196358,
+      "avg_throughput_bps": 20554815.729133807,
+      "packet_loss_rate": 0.02004263080695423,
+      "congestion_window": 10,
+      "avg_packet_size": 870,
+      "packet_size_stddev": 275.3374445815862,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  },
+  {
+    "iteration": 48,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 611.0926261235295,
+      "avg_throughput_bps": 21463873.358772818,
+      "packet_loss_rate": 0.01730264794117039,
+      "congestion_window": 10,
+      "avg_packet_size": 1317,
+      "packet_size_stddev": 178.36451344862297,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1200
+  },
+  {
+    "iteration": 49,
+    "scenario": "satellite",
+    "features": {
+      "avg_rtt_ms": 648.5563967512144,
+      "avg_throughput_bps": 18800598.981611233,
+      "packet_loss_rate": 0.017998963481519872,
+      "congestion_window": 10,
+      "avg_packet_size": 866,
+      "packet_size_stddev": 234.1525771251256,
+      "network_type": 4,
+      "time_of_day": 12.0
+    },
+    "predicted_mtu": 1100
+  }
+]

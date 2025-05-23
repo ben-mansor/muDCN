@@ -6,10 +6,10 @@
 // and trust management.
 //
 
-use std::sync::Arc;
-use std::time::{Duration, SystemTime};
+// use std::sync::Arc;
+use std::time::SystemTime;
 
-use ring::{digest, rand, signature};
+use ring::{rand, signature};
 use ring::rand::SecureRandom;
 use ring::signature::KeyPair;
 use rustls::{Certificate, PrivateKey};

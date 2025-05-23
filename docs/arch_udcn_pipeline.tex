@@ -1,0 +1,152 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,backgrounds,fit,positioning,shapes.geometric,shapes.symbols,shadows}
+
+% Define custom styles for the different components
+\tikzset{
+    module/.style={
+        rectangle, 
+        draw=black, 
+        thick, 
+        fill=blue!10, 
+        text width=2.5cm, 
+        minimum height=1.5cm, 
+        text centered,
+        font=\sffamily\small,
+        rounded corners=2pt,
+        drop shadow
+    },
+    hardware/.style={
+        trapezium, 
+        draw=black, 
+        thick, 
+        fill=gray!20, 
+        text width=2.5cm, 
+        minimum height=1.5cm, 
+        text centered,
+        font=\sffamily\small,
+        trapezium left angle=70,
+        trapezium right angle=110,
+        drop shadow
+    },
+    ml/.style={
+        ellipse, 
+        draw=black, 
+        thick, 
+        fill=green!15, 
+        text width=2.3cm, 
+        minimum height=1.5cm, 
+        text centered,
+        font=\sffamily\small,
+        drop shadow
+    },
+    kernel/.style={
+        rectangle, 
+        draw=black, 
+        thick, 
+        fill=orange!15, 
+        text width=2.5cm, 
+        minimum height=1.5cm, 
+        text centered,
+        font=\sffamily\small,
+        rounded corners=2pt,
+        drop shadow
+    },
+    arrow/.style={
+        -Stealth,
+        thick,
+        shorten >=1pt
+    },
+    bidirectional/.style={
+        Stealth-Stealth,
+        thick,
+        shorten >=1pt
+    },
+    flowlabel/.style={
+        font=\sffamily\footnotesize,
+        fill=white,
+        inner sep=1pt
+    },
+    highlight/.style={
+        draw=red,
+        ultra thick,
+        rounded corners=3pt,
+        inner sep=6pt
+    },
+    plane/.style={
+        rectangle,
+        draw=black,
+        dashed,
+        thick,
+        inner sep=10pt,
+        rounded corners=5pt,
+        fill=gray!5
+    }
+}
+
+\begin{document}
+\begin{tikzpicture}
+
+% Define the different system planes
+\node[plane, fit={(0,0) (12,9)}, label={[anchor=north west]north west:\textbf{User Space}}] (userspace) {};
+\node[plane, fit={(0,-5) (12,-1)}, label={[anchor=north west]north west:\textbf{Kernel Space}}] (kernelspace) {};
+\node[plane, fit={(0,-8) (12,-6)}, label={[anchor=north west]north west:\textbf{Hardware}}] (hardwareplane) {};
+
+% User Space Components
+\node[ml] (tfmodel) at (2,7) {TensorFlow Lite \\ MTU Prediction\\Model};
+\node[module] (grpc_server) at (7,7) {gRPC Service\\Interface};
+\node[module] (python_control) at (2,4.5) {Python\\Control Plane};
+\node[module] (rust_transport) at (7,4.5) {Rust NDN\\Transport Layer};
+\node[module] (quic_engine) at (7,2) {QUIC/NDN\\Protocol Engine};
+
+% Kernel Space Components
+\node[kernel] (ebpf_loader) at (2,-3) {eBPF/XDP\\Program Loader};
+\node[kernel] (xdp_program) at (7,-3) {XDP NDN Parser\\Content Store};
+
+% Hardware Components
+\node[hardware] (nic) at (7,-7) {Network Interface\\Card (NIC)};
+
+% Connecting arrows with labels
+\draw[arrow] (tfmodel) -- (python_control) 
+    node[flowlabel, midway, right] {Predictions};
+
+\draw[bidirectional] (python_control) -- (grpc_server)
+    node[flowlabel, midway, above] {API Calls};
+
+\draw[bidirectional] (grpc_server) -- (rust_transport)
+    node[flowlabel, midway, right] {gRPC};
+
+\draw[bidirectional] (rust_transport) -- (quic_engine)
+    node[flowlabel, midway, right] {Transport};
+
+\draw[arrow] (python_control) to[out=-120, in=120] (ebpf_loader)
+    node[flowlabel, midway, left] {Config};
+
+\draw[arrow] (ebpf_loader) -- (xdp_program)
+    node[flowlabel, midway, above] {Load};
+
+\draw[bidirectional] (quic_engine) -- (xdp_program)
+    node[flowlabel, midway, right] {Packet\\Handoff};
+
+\draw[bidirectional] (xdp_program) -- (nic)
+    node[flowlabel, midway, right] {Zero-copy\\Access};
+
+% External network arrow
+\draw[bidirectional, dashed] (nic) -- ++(3,0) 
+    node[right] {Network};
+
+% Highlight the XDP acceleration path (Phase 5 focus)
+\node[highlight, fit={(xdp_program) (nic)}] (xdp_highlight) {};
+\node[above right=0.1cm and -1.5cm of xdp_highlight.north east, font=\sffamily\small\bfseries, text=red] {Phase 5 Focus};
+
+% Title
+\node[above=0.5cm of userspace.north, font=\sffamily\Large\bfseries] 
+    {μDCN Pipeline Architecture: ML → gRPC → QUIC → XDP → NIC};
+
+% Data flow cycle
+\draw[-{Latex[length=3mm]}, blue!70, ultra thick, dashed] 
+    (10.5,8) arc (90:-90:3.5 and 6.5) -- ++(-1.5,0) arc (-90:-120:2 and 3) 
+    node[pos=0.7, above right, text=blue!70, align=left, font=\sffamily\small\bfseries] {Data \\Flow\\Cycle};
+
+\end{tikzpicture}
+\end{document}
